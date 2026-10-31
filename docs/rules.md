@@ -20,7 +20,9 @@ Treat them as requirements. If a rule seems to conflict with a skill or template
    *Why:* the ElevenLabs API and connector are unreachable from the agent's workspace (egress proxy blocks api.elevenlabs.io). **Never ask for or store an API key** — one key was pasted in chat on Oct 30 and must be treated as compromised.
 
 ## Picture
-7. **Stick-figure character only** (Piva retired). Character must: lip-sync to the voice (mouth driven by the loudness envelope), blink, show emotion (brows + mouth), keep **both hands visible**, gesture while talking.
+7. **Character for THIS channel: a more human-like 3D character — to be chosen (Uzair, Oct 31 2026).**
+   The 50-character 2D cast used on the other three channels is deliberately NOT used here. Until the 3D character is picked,
+   ask Uzair before building a Learn AI video. Whatever character is used must lip-sync, blink, show emotion and keep both hands visible.
 8. **Captions: word-by-word, the spoken word highlighted in a colored pill**, said words solid, upcoming words faded.
    *Why:* Uzair chose this over the stick-figure-shorts skill's "plain subtitles only" rule. On light backgrounds use dark ink text (see `LightCaptions` in the Learn AI trailer episode); on dark backgrounds use the kit's `Captions`.
 9. **Style is dynamic, built from the topic** — no fixed channel look. Bright/warm for positive or school topics; dark for news/thriller/space. Uzair: "it's not required to follow dark and red style... animations should be dynamic, change according to topic."
