@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Audio, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { Shots, ShotDef, Figure, FontStyle, CAPTION_FONT, ramp, eio, eout, eback, pop, clamp01, lerp, mix, rnd, blinkAt, VW, VH } from "./kit";
 import { WORDS, CHUNKS, VOICE_END, TOTAL, ENV } from "./words";
 
@@ -585,7 +585,7 @@ export const IntroFilm: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: PAPER }}>
       <FontStyle />
-      <Audio src={staticFile("projects/intro1/narration.wav")} volume={1} />
+      <Sequence from={15} durationInFrames={TOTAL - 15}><Audio src={staticFile("projects/intro1/narration.wav")} volume={1} /></Sequence>
       <svg width={VW} height={VH} viewBox={`0 0 ${VW} ${VH}`}>
         <Defs />
         <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
