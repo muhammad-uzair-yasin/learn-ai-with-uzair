@@ -12,9 +12,45 @@ export const TC = {
 };
 const SW = 4;
 
+export type HairStyle = "quiff" | "sidepart" | "curly" | "spiky" | "wavy";
+const HO = { stroke: "#2A1E18", strokeWidth: 4, strokeLinejoin: "round" as const };
+export const Hair: React.FC<{ style: HairStyle }> = ({ style }) => {
+  if (style === "sidepart") return (
+    <g>
+      <path d="M118 182 Q106 120 136 86 Q170 54 214 58 Q262 60 284 98 Q296 136 282 182 Q280 146 264 128 Q240 118 214 116 Q182 112 160 104 Q150 112 146 124 Q132 140 118 182 Z" fill={TC.hair} {...HO} />
+      <path d="M160 104 Q154 84 166 66" stroke={TC.hairSh} strokeWidth={4} fill="none" strokeLinecap="round" />
+      <path d="M178 70 Q226 60 262 84 Q232 76 206 80 Q190 80 178 70 Z M150 80 Q156 72 164 70 Q160 80 154 92 Z" fill={TC.hairHi} />
+    </g>
+  );
+  if (style === "curly") {
+    const C: [number, number, number][] = [[132, 142, 20], [128, 112, 22], [146, 84, 24], [176, 64, 25], [208, 58, 26], [240, 64, 25], [266, 84, 24], [278, 114, 22], [272, 144, 20], [162, 100, 20], [196, 90, 22], [232, 94, 21], [254, 112, 18], [148, 120, 16]];
+    return <g>{C.map(([x, y, r], i) => <g key={i}><circle cx={x} cy={y} r={r} fill={TC.hair} {...HO} /></g>)}{C.map(([x, y, r], i) => <circle key={`h${i}`} cx={x - r * 0.3} cy={y - r * 0.3} r={r * 0.32} fill={TC.hairHi} />)}</g>;
+  }
+  if (style === "spiky") return (
+    <g>
+      <path d="M120 180 Q114 140 124 118 L112 92 L146 98 L140 62 L176 82 L186 42 L210 76 L236 40 L244 80 L276 62 L268 98 L298 96 L280 124 Q290 150 282 180 Q278 146 262 130 Q230 118 200 118 Q164 118 140 132 Q126 146 120 180 Z" fill={TC.hair} {...HO} />
+      <path d="M186 52 L198 84 M236 50 L232 84 M150 74 L170 96" stroke={TC.hairHi} strokeWidth={6} strokeLinecap="round" />
+    </g>
+  );
+  if (style === "wavy") return (
+    <g>
+      <path d="M116 184 Q100 140 116 108 Q114 70 150 56 Q170 34 202 40 Q232 28 258 46 Q292 56 294 92 Q306 126 288 160 Q286 178 282 184 Q280 150 268 134 Q254 140 242 128 Q228 140 214 128 Q198 140 184 128 Q168 140 156 128 Q140 138 132 150 Q122 162 116 184 Z" fill={TC.hair} {...HO} />
+      <path d="M142 74 Q160 58 180 66 M204 52 Q228 44 248 58 M262 74 Q280 86 280 106 M150 104 Q166 92 182 100 M214 96 Q232 88 248 100" stroke={TC.hairHi} strokeWidth={5} fill="none" strokeLinecap="round" />
+    </g>
+  );
+  return (
+    <g>
+      <path d="M120 176 Q112 128 126 104 Q128 70 160 56 Q176 26 214 30 Q246 22 270 44 Q300 62 290 104 Q296 140 280 176 Q280 140 266 124 Q252 112 232 116 Q236 104 226 96 Q210 112 184 112 Q160 110 140 124 Q126 140 120 176 Z" fill={TC.hair} {...HO} />
+      <path d="M150 70 Q170 30 214 30 Q256 28 270 50 Q246 40 222 50 Q196 44 176 58 Q160 62 150 70 Z" fill={TC.hairHi} />
+      <path d="M168 84 Q192 64 226 66 Q206 72 192 86 Z M236 70 Q258 72 272 92 Q252 82 238 84 Z" fill={TC.hairHi} opacity={0.85} />
+      <path d="M132 120 Q140 104 156 98" stroke={TC.hairSh} strokeWidth={4} fill="none" strokeLinecap="round" />
+    </g>
+  );
+};
 export type TeacherPose = {
   talk?: number; blink?: number; brow?: number; headTilt?: number;
   point?: number; pointWiggle?: number; bob?: number; smile?: number; lookX?: number;
+  hair?: HairStyle;
 };
 
 const Limb: React.FC<{ d: string; w: number; fill: string }> = ({ d, w, fill }) => (
@@ -66,10 +102,23 @@ const cuff = (ex: number, ey: number, wx: number, wy: number, r: number) => {
   const a = [wx - ux * 16, wy - uy * 16], b = [wx - ux * 2, wy - uy * 2];
   return smooth([[a[0] + nx * r, a[1] + ny * r], [b[0] + nx * (r + 1), b[1] + ny * (r + 1)], [b[0] - nx * (r + 1), b[1] - ny * (r + 1)], [a[0] - nx * r, a[1] - ny * r]], 0.15);
 };
+const BKX = 176, BKY = 470; // book-hand wrist
+/** Cartoon fist: local +x = forearm direction; fingers curl on +y, thumb on top (-y). */
+const Fist: React.FC<{ x: number; y: number; ang: number }> = ({ x, y, ang }) => (
+  <g transform={`translate(${x} ${y}) rotate(${ang})`}>
+    <path d={smooth([[-22, -10], [-6, -15], [10, -13], [16, 0], [10, 14], [-8, 16], [-22, 10]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+    {[-10, -1, 8, 17].map((fx, i) => (
+      <path key={i} d={smooth([[fx - 5, 2], [fx + 5, 2], [fx + 5.5, 14], [fx, 19.5], [fx - 5.5, 14]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+    ))}
+    {[-10, -1, 8, 17].map((fx, i) => <path key={`k${i}`} d={`M${fx - 3} 11 q3 2 6 0`} stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />)}
+    <path d={smooth([[-12, -9], [6, -16], [22, -12], [26, -7], [20, -3], [4, -5], [-10, -2]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+    <path d="M21 -11 q3 1 3 4" stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />
+  </g>
+);
 const FACE = "M122 168 Q120 96 200 92 Q280 96 278 168 Q280 232 246 262 Q200 290 154 262 Q120 232 122 168 Z";
 
 export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
-  const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0 } = pose;
+  const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0, hair = "quiff" } = pose;
   const rad = (a: number) => (a * Math.PI) / 180;
   // pointing arm (viewer right): shoulder -> elbow -> wrist
   const sx = 262, sy = 322;
@@ -98,8 +147,6 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
       <path d={smooth([[206, 732], [250, 732], [276, 744], [284, 760], [272, 768], [208, 768], [203, 752]], 0.4)} fill={TC.shoe} {...O} />
       <path d="M128 752 Q140 744 152 746 M272 752 Q260 744 248 746" stroke="#55555F" strokeWidth={4} fill="none" strokeLinecap="round" />
 
-      {/* ---------- back arm (book side): upper arm behind the torso ---------- */}
-      <path d={armPath(126, 330, 106, 432, 170, 470)} fill={TC.shirt} {...O} />
       {/* ---------- torso ---------- */}
       <path d={smooth([[116, 336], [134, 302], [172, 288], [228, 288], [266, 302], [284, 336], [276, 420], [266, 516], [200, 524], [134, 516], [124, 420]], 0.35)} fill={TC.shirt} {...O} />
       <path d={smooth([[134, 320], [156, 300], [178, 292], [200, 366], [222, 292], [244, 300], [266, 320], [260, 420], [256, 504], [200, 514], [144, 504], [140, 420]], 0.3)} fill={TC.vest} {...O} />
@@ -119,25 +166,11 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
         <path d="M152 412 H198 M152 430 H186" stroke="#CFE3FF" strokeWidth={6} strokeLinecap="round" />
         <circle cx={176} cy={466} r={13} fill="none" stroke="#CFE3FF" strokeWidth={5} />
       </g>
-      {/* forearm over the book + cuff + open hand on the cover */}
-      <path d={armPath(106, 432, 106, 432, 170, 470, true)} fill={TC.shirt} {...O} />
-      <path d={cuff(106, 432, 170, 470, 19)} fill={TC.shirtSh} {...O} strokeWidth={3} />
-      <path d="M118 444 q8 8 18 6 M126 432 q6 6 14 6" stroke={TC.shirtSh} strokeWidth={3} fill="none" strokeLinecap="round" />
-      {/* open hand holding the book: palm on the cover, fingers curling over the right edge */}
-      <g transform="translate(180 474) rotate(-38)">
-        {/* fingers (drawn first, palm overlaps their base); lengths: pinky..index */}
-        {[[ 13, 20], [4, 26], [-5, 27], [-14, 24]].map(([y, len], i) => (
-          <g key={i}>
-            <path d={smooth([[6, y - 4.5], [6 + len - 4, y - 4.5], [6 + len + 1, y], [6 + len - 4, y + 4.5], [6, y + 4.5]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-            <path d={`M${6 + len * 0.55} ${y - 3.5} q2 3.5 0 7`} stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />
-          </g>
-        ))}
-        {/* palm / back of hand */}
-        <path d={smooth([[-14, -14], [6, -18], [14, -8], [14, 10], [4, 18], [-14, 14], [-20, 0]], 0.45)} fill={TC.skin} {...O} />
-        <path d="M2 -10 q4 10 0 20" stroke={TC.skinSh} strokeWidth={2.5} fill="none" strokeLinecap="round" opacity={0.8} />
-        {/* thumb on top */}
-        <path d={smooth([[-10, -12], [0, -24], [10, -32], [16, -30], [14, -24], [4, -14]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-      </g>
+      {/* ---------- book arm: full sleeve hugging the book, fist gripping its right edge ---------- */}
+      <path d={armPath(136, 324, 110, 428, BKX, BKY)} fill={TC.shirt} {...O} />
+      <path d={cuff(110, 428, BKX, BKY, 17)} fill={TC.shirtSh} {...O} strokeWidth={3} />
+      <path d="M118 360 q-6 14 -4 26 M112 440 q10 6 20 4" stroke={TC.shirtSh} strokeWidth={3} fill="none" strokeLinecap="round" />
+      <Fist x={BKX + 10} y={BKY + 2} ang={(Math.atan2(BKY - 428, BKX - 110) * 180) / Math.PI} />
 
       {/* ---------- pointing arm ---------- */}
       <path d={armPath(sx, sy, elx, ely, hx, hy)} fill={TC.shirt} {...O} />
@@ -148,19 +181,7 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
         <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.stick} strokeWidth={7} />
         <circle cx={st2x} cy={st2y} r={6.5} fill={TC.white} stroke={TC.out} strokeWidth={3} />
       </g>
-      {/* fist gripping the pointer: local +x = along the stick (toward its tip) */}
-      <g transform={`translate(${hx} ${hy}) rotate(${handAng})`}>
-        {/* back of the hand / palm */}
-        <path d={smooth([[-22, -10], [-6, -15], [10, -13], [16, 0], [10, 14], [-8, 16], [-22, 10]], 0.45)} fill={TC.skin} {...O} />
-        {/* four curled fingers stacked along the stick (pinky at the back, index at the front) */}
-        {[-10, -1, 8, 17].map((x, i) => (
-          <path key={i} d={smooth([[x - 5, 2], [x + 5, 2], [x + 5.5, 14], [x, 19.5], [x - 5.5, 14]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-        ))}
-        {[-10, -1, 8, 17].map((x, i) => <path key={`k${i}`} d={`M${x - 3} 11 q3 2 6 0`} stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />)}
-        {/* thumb lying along the top of the stick */}
-        <path d={smooth([[-12, -9], [6, -16], [22, -12], [26, -7], [20, -3], [4, -5], [-10, -2]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-        <path d="M21 -11 q3 1 3 4" stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />
-      </g>
+      <Fist x={hx} y={hy} ang={handAng} />
       {/* neck */}
       <path d="M180 248 L180 292 Q200 302 220 292 L220 248 Z" fill={TC.skinSh} stroke={TC.out} strokeWidth={SW} />
 
@@ -207,11 +228,7 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
         <path d="M146 160 Q156 152 168 154 M218 160 Q228 152 240 154" stroke="#FFFFFF" strokeWidth={4} opacity={0.7} strokeLinecap="round" fill="none" />
         <path d={`M140 ${136 + by} Q162 ${124 + by} 186 ${134 + by}`} stroke={TC.hairSh} strokeWidth={9} fill="none" strokeLinecap="round" />
         <path d={`M214 ${134 + by} Q238 ${124 + by} 260 ${136 + by}`} stroke={TC.hairSh} strokeWidth={9} fill="none" strokeLinecap="round" />
-        <path d="M120 176 Q112 128 126 104 Q128 70 160 56 Q176 26 214 30 Q246 22 270 44 Q300 62 290 104 Q296 140 280 176 Q280 140 266 124 Q252 112 232 116 Q236 104 226 96 Q210 112 184 112 Q160 110 140 124 Q126 140 120 176 Z"
-          fill={TC.hair} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
-        <path d="M150 70 Q170 30 214 30 Q256 28 270 50 Q246 40 222 50 Q196 44 176 58 Q160 62 150 70 Z" fill={TC.hairHi} />
-        <path d="M168 84 Q192 64 226 66 Q206 72 192 86 Z M236 70 Q258 72 272 92 Q252 82 238 84 Z" fill={TC.hairHi} opacity={0.85} />
-        <path d="M132 120 Q140 104 156 98" stroke={TC.hairSh} strokeWidth={4} fill="none" strokeLinecap="round" />
+        <Hair style={hair} />
       </g>
     </g>
   );
