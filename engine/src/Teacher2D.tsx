@@ -163,7 +163,7 @@ const Fist: React.FC<{ x: number; y: number; ang: number }> = ({ x, y, ang }) =>
 const FACE = "M122 168 Q120 96 200 92 Q280 96 278 168 Q280 232 246 262 Q200 290 154 262 Q120 232 122 168 Z";
 
 export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
-  const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0, hair = "sidepart", outfit = "vest", leftHand = "relaxed" } = pose;
+  const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0, hair = "sidepart", outfit = "blazer", leftHand = "relaxed" } = pose;
   const OF = OUTFITS[outfit];
   const [lex, ley, lwx, lwy] = LEFT_ARM[leftHand];
   const lAng = (Math.atan2(lwy - ley, lwx - lex) * 180) / Math.PI + 90;
