@@ -164,12 +164,26 @@ export const TitleBar: React.FC<{ f: number; total: number; lesson: number; modu
     </g>
   </svg>
 );
-export const CaptionBar: React.FC<{ f: number; words: [number, number, string][]; chunks: [number, number][] }> = ({ f, words, chunks }) => (
-  <>
-    <div style={{ position: "absolute", left: 30, right: 30, top: 1592, height: 112, borderRadius: 40, background: "rgba(255,255,255,0.92)", boxShadow: "0 10px 28px rgba(30,42,68,0.18)" }} />
-    <Caps f={f} words={words} chunks={chunks} accent={K.blue} theme="light" y={1610} />
-  </>
-);
+/** How many lines the current caption chunk wraps to (same chunk choice + layout as factkit Caps: 66px, 9px margins, 980px wide). */
+const captionLines = (f: number, words: [number, number, string][], chunks: [number, number][]) => {
+  const c = chunks.find(([a, b], k) => f >= words[a][0] - 2 && f < (chunks[k + 1] ? Math.min(words[chunks[k + 1][0]][0] - 2, words[b][1] + 24) : words[b][1] + 24));
+  if (!c) return 1;
+  let lines = 1, x = 0;
+  for (const [, , t] of words.slice(c[0], c[1] + 1)) {
+    const w = textW(t, 66) + 18 + 28; // word + margins + room for the highlighted word's padding
+    if (x > 0 && x + w > 980) { lines++; x = w; } else x += w;
+  }
+  return lines;
+};
+export const CaptionBar: React.FC<{ f: number; words: [number, number, string][]; chunks: [number, number][] }> = ({ f, words, chunks }) => {
+  const h = 112 + (captionLines(f, words, chunks) - 1) * 86; // band grows so a wrapped second line stays on white
+  return (
+    <>
+      <div style={{ position: "absolute", left: 30, right: 30, top: 1592, height: h, borderRadius: 40, background: "rgba(255,255,255,0.92)", boxShadow: "0 10px 28px rgba(30,42,68,0.18)" }} />
+      <Caps f={f} words={words} chunks={chunks} accent={K.blue} theme="light" y={1610} />
+    </>
+  );
+};
 
 // ================= TEACHER PERFORMANCE =================
 /** point: keyframes [frame, 0..1] (1 = pointer up at the screen); hands: [fromFrame, gesture]; brows: [from, to] eyebrow-raise windows. */
