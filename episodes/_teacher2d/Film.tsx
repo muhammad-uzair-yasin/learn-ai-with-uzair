@@ -11,9 +11,9 @@ export const T2: React.FC = () => (
         <text x={260} y={160} textAnchor="middle" fontFamily="sans-serif" fontWeight={800} fontSize={48} fill="#EAF2EA">AI PREDICTS</text>
         <text x={260} y={225} textAnchor="middle" fontFamily="sans-serif" fontSize={32} fill="#CFE3D4">the next word…</text>
       </g>
-      <g transform="translate(110 420) scale(1.45)"><Teacher2D pose={{ point: 1, talk: 0.4, brow: 0.4, smile: 0.9 }} /></g>
-      <g transform="translate(640 1180) scale(0.82)"><Teacher2D pose={{ point: 0, smile: 0.8 }} /></g>
-      <g transform="translate(860 1180) scale(0.82)"><Teacher2D pose={{ point: 0.5, smile: 0.8, talk: 0.8 }} /></g>
+      <g transform="translate(110 480) scale(1.6)"><Teacher2D pose={{ point: 1, talk: 0.4, brow: 0.4, smile: 0.9 }} /></g>
+      <g transform="translate(640 1240) scale(0.86)"><Teacher2D pose={{ point: 0, smile: 0.8 }} /></g>
+      <g transform="translate(840 1240) scale(0.86)"><Teacher2D pose={{ point: 0.5, smile: 0.8, talk: 0.8 }} /></g>
     </svg>
   </AbsoluteFill>
 );
