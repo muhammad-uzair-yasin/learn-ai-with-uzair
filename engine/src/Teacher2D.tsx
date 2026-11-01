@@ -29,51 +29,93 @@ const Hand: React.FC<{ x: number; y: number; r?: number }> = ({ x, y, r = 17 }) 
     <path d={`M${x - r * 0.5} ${y + r * 0.2} q ${r * 0.5} ${r * 0.5} ${r} 0`} stroke={TC.skinSh} strokeWidth={3} fill="none" strokeLinecap="round" />
   </g>
 );
+/** tapered capsule outline between (x1,y1) r1 and (x2,y2) r2 */
+const capsule = (x1: number, y1: number, x2: number, y2: number, r1: number, r2: number) => {
+  const a = Math.atan2(y2 - y1, x2 - x1), nx = -Math.sin(a), ny = Math.cos(a);
+  return `M${x1 + nx * r1} ${y1 + ny * r1} L${x2 + nx * r2} ${y2 + ny * r2} A${r2} ${r2} 0 0 0 ${x2 - nx * r2} ${y2 - ny * r2} L${x1 - nx * r1} ${y1 - ny * r1} A${r1} ${r1} 0 0 0 ${x1 + nx * r1} ${y1 + ny * r1} Z`;
+};
 const FACE = "M122 168 Q120 96 200 92 Q280 96 278 168 Q280 232 246 262 Q200 290 154 262 Q120 232 122 168 Z";
 
 export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
   const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0 } = pose;
   const rad = (a: number) => (a * Math.PI) / 180;
-  const sx = 282, sy = 318;
-  const ua = -10 + -118 * point, fa = ua + (-25 - 15 * point) + pointWiggle;
-  const L1 = 112, L2 = 100;
+  // pointing arm (viewer right): shoulder -> elbow -> wrist
+  const sx = 266, sy = 316;
+  const ua = -12 + -116 * point, fa = ua + (-28 - 14 * point) + pointWiggle;
+  const L1 = 104, L2 = 92;
   const elx = sx - Math.sin(rad(ua)) * L1, ely = sy + Math.cos(rad(ua)) * L1;
   const hx = elx - Math.sin(rad(fa)) * L2, hy = ely + Math.cos(rad(fa)) * L2;
-  const sa = rad(fa - 6);
-  const st1x = hx + Math.sin(sa) * 14, st1y = hy - Math.cos(sa) * 14;
-  const st2x = hx - Math.sin(sa) * 140, st2y = hy + Math.cos(sa) * 140;
+  const sa = rad(fa);
+  const dirx = -Math.sin(sa), diry = Math.cos(sa);            // forearm direction (elbow -> hand)
+  const st1x = hx - dirx * 20, st1y = hy - diry * 20;
+  const st2x = hx + dirx * 150, st2y = hy + diry * 150;
+  const handAng = (Math.atan2(diry, dirx) * 180) / Math.PI;    // fist faces along the forearm
   const blinkK = Math.max(0.06, 1 - blink);
   const by = -brow * 7;
   const open = 6 + talk * 22;
   return (
     <g transform={`translate(0 ${bob})`}>
-      <path d="M148 600 L142 840 L194 840 L200 650 L206 840 L258 840 L252 600 Z" fill={TC.pants} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
-      <path d="M200 650 L200 700" stroke={TC.out} strokeWidth={3} />
-      <path d="M136 836 Q132 866 118 870 L196 870 Q200 852 196 836 Z" fill={TC.shoe} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
-      <path d="M204 836 Q200 852 204 870 L282 870 Q268 866 264 836 Z" fill={TC.shoe} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
-      <Limb d="M122 330 Q98 420 132 478" w={42} fill={TC.shirt} />
-      <path d="M124 318 Q132 292 172 284 L228 284 Q268 292 276 318 L262 612 L138 612 Z" fill={TC.shirt} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
-      <path d="M140 330 Q150 300 176 292 L200 380 L224 292 Q250 300 260 330 L254 604 L146 604 Z" fill={TC.vest} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
-      <path d="M146 560 L254 560" stroke={TC.vestSh} strokeWidth={10} />
-      <path d="M150 576 L250 576 M150 590 L250 590" stroke={TC.vestSh} strokeWidth={3} opacity={0.7} />
-      <path d="M240 330 L250 560" stroke={TC.vestSh} strokeWidth={8} opacity={0.6} />
-      <path d="M200 302 L190 320 L196 372 L200 384 L204 372 L210 320 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-      <path d="M190 298 L200 312 L210 298 L205 292 L195 292 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} />
-      <path d="M176 284 L198 306 L184 316 Z M224 284 L202 306 L216 316 Z" fill={TC.white} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-      <g transform="rotate(-8 170 470)">
-        <rect x={120} y={402} width={92} height={120} rx={8} fill={TC.book} stroke={TC.out} strokeWidth={SW} />
-        <rect x={120} y={402} width={18} height={120} rx={6} fill={TC.bookSh} stroke={TC.out} strokeWidth={SW} />
-        <path d="M150 432 H196 M150 448 H186" stroke="#CFE3FF" strokeWidth={6} strokeLinecap="round" />
+      {/* ---------- legs ---------- */}
+      <path d="M152 556 Q150 680 158 806 L196 806 Q198 690 200 600 Q202 690 204 806 L242 806 Q250 680 248 556 Z" fill={TC.pants} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+      <path d="M200 600 L200 640" stroke={TC.out} strokeWidth={3} strokeLinecap="round" />
+      <path d="M178 600 Q176 700 178 800 M222 600 Q224 700 222 800" stroke="#454A57" strokeWidth={3} fill="none" opacity={0.8} />
+      <path d="M156 790 L196 790 M204 790 L244 790" stroke="#22252D" strokeWidth={5} />
+      {/* shoes: rounded toes pointing slightly outward */}
+      <path d="M160 800 Q150 800 140 812 Q118 820 120 836 Q122 846 140 846 L196 846 Q202 846 200 832 L198 802 Z" fill={TC.shoe} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+      <path d="M240 800 Q250 800 260 812 Q282 820 280 836 Q278 846 260 846 L204 846 Q198 846 200 832 L202 802 Z" fill={TC.shoe} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+      <path d="M130 826 Q140 818 152 820 M270 826 Q260 818 248 820" stroke="#4A4A55" strokeWidth={4} fill="none" strokeLinecap="round" />
+      <path d="M122 840 L198 840 M278 840 L202 840" stroke="#3A3A44" strokeWidth={4} />
+
+      {/* ---------- back (book) arm: shoulder -> elbow ---------- */}
+      <path d={capsule(134, 320, 114, 424, 23, 20)} fill={TC.shirt} stroke={TC.out} strokeWidth={SW} />
+      {/* ---------- torso ---------- */}
+      <path d="M128 318 Q130 296 166 286 L234 286 Q270 296 272 318 Q262 440 254 562 L146 562 Q138 440 128 318 Z" fill={TC.shirt} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+      {/* vest */}
+      <path d="M142 318 Q150 300 172 292 L200 372 L228 292 Q250 300 258 318 Q252 440 250 546 L150 546 Q148 440 142 318 Z" fill={TC.vest} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+      <path d="M150 530 L250 530 L250 556 Q200 566 150 556 Z" fill={TC.vestSh} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+      {[160, 172, 184, 196, 208, 220, 232, 244].map((x) => <path key={x} d={`M${x} 534 L${x} 556`} stroke="#555B68" strokeWidth={2} />)}
+      <path d="M236 320 Q244 430 242 528" stroke={TC.vestSh} strokeWidth={8} fill="none" opacity={0.55} strokeLinecap="round" />
+      <path d="M172 292 L200 372 L228 292" stroke="#5B6170" strokeWidth={6} fill="none" strokeLinejoin="round" />
+      {/* collar + tie */}
+      <path d="M200 304 L191 320 L196 368 L200 378 L204 368 L209 320 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+      <path d="M191 298 L200 312 L209 298 L205 291 L195 291 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+      <path d="M174 284 L198 304 L182 318 Z M226 284 L202 304 L218 318 Z" fill={TC.white} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+      {/* ---------- book held against the chest ---------- */}
+      <g transform="rotate(-10 168 452)">
+        <rect x={118} y={392} width={96} height={124} rx={8} fill={TC.book} stroke={TC.out} strokeWidth={SW} />
+        <rect x={118} y={392} width={20} height={124} rx={6} fill={TC.bookSh} stroke={TC.out} strokeWidth={SW} />
+        <rect x={210} y={398} width={8} height={112} rx={3} fill="#F4F1E8" stroke={TC.out} strokeWidth={2.5} />
+        <path d="M150 424 H198 M150 442 H186" stroke="#CFE3FF" strokeWidth={6} strokeLinecap="round" />
+        <circle cx={174} cy={478} r={14} fill="none" stroke="#CFE3FF" strokeWidth={5} />
       </g>
-      <Limb d="M132 478 Q160 488 190 470" w={36} fill={TC.shirt} />
-      <Hand x={200} y={468} r={16} />
-      <Limb d={`M${sx} ${sy} L${elx} ${ely} L${hx} ${hy}`} w={40} fill={TC.shirt} />
+      {/* forearm across the body + cuff + hand gripping the book edge */}
+      <path d={capsule(114, 424, 182, 476, 20, 17)} fill={TC.shirt} stroke={TC.out} strokeWidth={SW} />
+      <path d={capsule(170, 467, 184, 477, 18, 18)} fill={TC.shirtSh} stroke={TC.out} strokeWidth={3} />
+      <g transform="translate(198 474) rotate(-30)">
+        <ellipse cx={0} cy={0} rx={17} ry={15} fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
+        {[-9, 0, 9].map((y) => <path key={y} d={`M6 ${y - 4} q12 2 12 4 q0 4 -12 4`} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />)}
+        <path d="M-6 -12 q-4 -10 6 -14 q8 -2 10 6" fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+      </g>
+
+      {/* ---------- pointing arm ---------- */}
+      <path d={capsule(sx, sy, elx, ely, 23, 20)} fill={TC.shirt} stroke={TC.out} strokeWidth={SW} />
+      <path d={capsule(elx, ely, hx - dirx * 12, hy - diry * 12, 20, 16)} fill={TC.shirt} stroke={TC.out} strokeWidth={SW} />
+      <circle cx={elx} cy={ely} r={19} fill={TC.shirt} />
+      <path d={capsule(hx - dirx * 22, hy - diry * 22, hx - dirx * 10, hy - diry * 10, 18, 18)} fill={TC.shirtSh} stroke={TC.out} strokeWidth={3} />
+      {/* pointer stick (under the fist) */}
       <g strokeLinecap="round">
-        <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.out} strokeWidth={11} />
-        <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.stick} strokeWidth={6} />
-        <circle cx={st2x} cy={st2y} r={6} fill={TC.white} stroke={TC.out} strokeWidth={3} />
+        <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.out} strokeWidth={12} />
+        <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.stick} strokeWidth={7} />
+        <circle cx={st2x} cy={st2y} r={6.5} fill={TC.white} stroke={TC.out} strokeWidth={3} />
       </g>
-      <Hand x={hx} y={hy} r={18} />
+      {/* fist around the stick */}
+      <g transform={`translate(${hx} ${hy}) rotate(${handAng})`}>
+        <rect x={-6} y={-17} width={30} height={34} rx={13} fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
+        {[-9, 0, 9].map((y) => <path key={y} d={`M14 ${y - 5} q12 1 12 5 q0 5 -12 5`} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />)}
+        <path d="M2 -16 q14 -6 20 4" fill="none" stroke={TC.out} strokeWidth={3} strokeLinecap="round" />
+        <path d="M0 10 q8 4 14 -2" fill="none" stroke={TC.skinSh} strokeWidth={3} strokeLinecap="round" />
+      </g>
+      {/* neck */}
       <path d="M180 248 L180 292 Q200 302 220 292 L220 248 Z" fill={TC.skinSh} stroke={TC.out} strokeWidth={SW} />
 
       {/* ================= HEAD ================= */}
