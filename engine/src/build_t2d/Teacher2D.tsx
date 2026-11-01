@@ -47,10 +47,55 @@ export const Hair: React.FC<{ style: HairStyle }> = ({ style }) => {
     </g>
   );
 };
+export type Outfit = "vest" | "blazer" | "sweater" | "cardigan" | "shirt";
+export type LeftHand = "relaxed" | "openPalm" | "fingerUp" | "wave" | "thumbsUp" | "pocket";
+type OT = { sleeve: string; sleeveSh: string; cuff: string; inner: string; layer: string; layerSh: string; tie: string | null };
+export const OUTFITS: Record<Outfit, OT> = {
+  vest: { sleeve: "#BFDDF7", sleeveSh: "#97C2EA", cuff: "#97C2EA", inner: "#BFDDF7", layer: "#7C8290", layerSh: "#646A78", tie: "#1F2E55" },
+  blazer: { sleeve: "#2C3E66", sleeveSh: "#22314F", cuff: "#FFFFFF", inner: "#FFFFFF", layer: "#2C3E66", layerSh: "#22314F", tie: "#B23A48" },
+  sweater: { sleeve: "#2E7D6B", sleeveSh: "#24614F", cuff: "#24614F", inner: "#FFFFFF", layer: "#2E7D6B", layerSh: "#24614F", tie: null },
+  cardigan: { sleeve: "#D9A441", sleeveSh: "#B98728", cuff: "#B98728", inner: "#FFFFFF", layer: "#D9A441", layerSh: "#B98728", tie: null },
+  shirt: { sleeve: "#FFFFFF", sleeveSh: "#DCE3EC", cuff: "#DCE3EC", inner: "#FFFFFF", layer: "", layerSh: "#DCE3EC", tie: "#2F7DE1" },
+};
+/** Left-hand gestures: hand drawn at the wrist, local -y = away from the wrist (along the forearm). */
+const OpenPalm: React.FC<{ spread?: number }> = ({ spread = 1 }) => (
+  <g>
+    {[[-11, 22, -8], [-4, 27, -3], [4, 27, 2], [11, 21, 7]].map(([x, l, r], i) => (
+      <g key={i} transform={`rotate(${r * spread} ${x} -28)`}>
+        <path d={smooth([[x - 4.5, -26], [x + 4.5, -26], [x + 4.8, -26 - l + 4], [x, -26 - l - 1], [x - 4.8, -26 - l + 4]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+      </g>
+    ))}
+    <path d={smooth([[-16, -2], [16, -2], [17, -18], [14, -32], [-14, -32], [-17, -18]], 0.4)} fill={TC.skin} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+    <path d={smooth([[12, -8], [24, -18], [32, -30], [28, -34], [18, -26], [10, -18]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+    <path d="M-8 -12 q8 6 16 0 M-6 -22 q6 -3 12 0" stroke={TC.skinSh} strokeWidth={2.2} fill="none" strokeLinecap="round" />
+  </g>
+);
+const FingerUp: React.FC = () => (
+  <g>
+    <path d={smooth([[-9 - 4.5, -26], [-9 + 4.5, -26], [-9 + 4.8, -58], [-9, -63], [-9 - 4.8, -58]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+    <path d={smooth([[-16, -2], [16, -2], [18, -18], [14, -34], [-15, -32], [-18, -16]], 0.4)} fill={TC.skin} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+    {[-1, 7, 14].map((x, i) => <path key={i} d={`M${x - 4} -31 q4 -5 8 0`} stroke={TC.out} strokeWidth={2.6} fill="none" strokeLinecap="round" />)}
+    <path d={smooth([[16, -10], [8, -22], [-6, -24], [-8, -19], [4, -16], [12, -6]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+  </g>
+);
+const ThumbsUp: React.FC = () => (
+  <g>
+    <path d={smooth([[-16, -2], [16, -2], [18, -16], [16, -32], [-14, -32], [-18, -16]], 0.4)} fill={TC.skin} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+    {[-10, -2, 6].map((y, i) => <path key={i} d={`M-17 ${y - 8 - i * 0} q-6 4 0 8`} stroke={TC.out} strokeWidth={2.6} fill={TC.skin} strokeLinecap="round" />)}
+    <path d={smooth([[6, -30], [2, -48], [6, -58], [14, -56], [14, -40], [16, -30]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+    <path d="M-10 -14 h18 M-10 -22 h18" stroke={TC.skinSh} strokeWidth={2.2} strokeLinecap="round" />
+  </g>
+);
+const LEFT_ARM: Record<LeftHand, [number, number, number, number]> = {
+  relaxed: [116, 420, 112, 498], openPalm: [98, 432, 104, 352], fingerUp: [98, 432, 104, 350],
+  wave: [94, 420, 66, 344], thumbsUp: [100, 440, 126, 384], pocket: [96, 440, 144, 498],
+};
 export type TeacherPose = {
   talk?: number; blink?: number; brow?: number; headTilt?: number;
   point?: number; pointWiggle?: number; bob?: number; smile?: number; lookX?: number;
   hair?: HairStyle;
+  outfit?: Outfit;
+  leftHand?: LeftHand;
 };
 
 const Limb: React.FC<{ d: string; w: number; fill: string }> = ({ d, w, fill }) => (
@@ -118,7 +163,10 @@ const Fist: React.FC<{ x: number; y: number; ang: number }> = ({ x, y, ang }) =>
 const FACE = "M122 168 Q120 96 200 92 Q280 96 278 168 Q280 232 246 262 Q200 290 154 262 Q120 232 122 168 Z";
 
 export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
-  const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0, hair = "sidepart" } = pose;
+  const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0, hair = "sidepart", outfit = "vest", leftHand = "relaxed" } = pose;
+  const OF = OUTFITS[outfit];
+  const [lex, ley, lwx, lwy] = LEFT_ARM[leftHand];
+  const lAng = (Math.atan2(lwy - ley, lwx - lex) * 180) / Math.PI + 90;
   const rad = (a: number) => (a * Math.PI) / 180;
   // pointing arm (viewer right): shoulder -> elbow -> wrist
   const sx = 262, sy = 322;
@@ -147,35 +195,74 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
       <path d={smooth([[206, 732], [250, 732], [276, 744], [284, 760], [272, 768], [208, 768], [203, 752]], 0.4)} fill={TC.shoe} {...O} />
       <path d="M128 752 Q140 744 152 746 M272 752 Q260 744 248 746" stroke="#55555F" strokeWidth={4} fill="none" strokeLinecap="round" />
 
-      {/* ---------- torso ---------- */}
-      <path d={smooth([[116, 336], [134, 302], [172, 288], [228, 288], [266, 302], [284, 336], [276, 420], [266, 516], [200, 524], [134, 516], [124, 420]], 0.35)} fill={TC.shirt} {...O} />
-      <path d={smooth([[134, 320], [156, 300], [178, 292], [200, 366], [222, 292], [244, 300], [266, 320], [260, 420], [256, 504], [200, 514], [144, 504], [140, 420]], 0.3)} fill={TC.vest} {...O} />
-      <path d="M146 486 Q200 496 254 486 L256 504 Q200 516 144 504 Z" fill={TC.vestSh} {...O} strokeWidth={3} />
-      {[156, 168, 180, 192, 204, 216, 228, 240].map((x) => <path key={x} d={`M${x} 491 L${x} 508`} stroke="#555B68" strokeWidth={2} />)}
-      <path d="M244 318 Q252 410 248 480" stroke={TC.vestSh} strokeWidth={9} fill="none" opacity={0.55} strokeLinecap="round" />
-      <path d="M178 292 L200 366 L222 292" stroke="#5B6170" strokeWidth={6} fill="none" strokeLinejoin="round" />
-      {/* collar + tie */}
-      <path d="M200 304 L191 320 L196 358 L200 368 L204 358 L209 320 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-      <path d="M191 298 L200 312 L209 298 L205 291 L195 291 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-      <path d="M174 284 L198 304 L182 318 Z M226 284 L202 304 L218 318 Z" fill={TC.white} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-      {/* ---------- left arm: relaxed at his side ---------- */}
-      <path d={armPath(134, 324, 116, 420, BKX, BKY)} fill={TC.shirt} {...O} />
-      <path d={cuff(116, 420, BKX, BKY, 16)} fill={TC.shirtSh} {...O} strokeWidth={3} />
-      <path d="M118 352 q-6 14 -4 26 M110 424 q8 6 16 4" stroke={TC.shirtSh} strokeWidth={3} fill="none" strokeLinecap="round" />
-      {/* relaxed open hand hanging at his side (fingers down, thumb forward) */}
-      <g transform={`translate(${BKX} ${BKY + 4}) scale(1.3)`}>
-        {[-9, -3, 3, 9].map((fx, i) => (
-          <path key={i} d={smooth([[fx - 4, 6], [fx + 4, 6], [fx + 4.5, 22 + [0, 3, 3, -1][i]], [fx, 27 + [0, 3, 3, -1][i]], [fx - 4.5, 22 + [0, 3, 3, -1][i]]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={2.8} strokeLinejoin="round" />
-        ))}
-        <path d={smooth([[-13, -6], [13, -6], [15, 8], [10, 16], [-10, 16], [-15, 8]], 0.45)} fill={TC.skin} {...O} />
-        <path d={smooth([[10, 0], [20, 6], [22, 16], [17, 19], [12, 12]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={2.8} strokeLinejoin="round" />
-        <path d="M-6 8 q6 4 12 0" stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />
-      </g>
+      {/* ---------- torso (inner shirt/tee) ---------- */}
+      <path d={smooth([[116, 336], [134, 302], [172, 288], [228, 288], [266, 302], [284, 336], [276, 420], [266, 516], [200, 524], [134, 516], [124, 420]], 0.35)} fill={OF.inner} {...O} />
+      {outfit === "shirt" && <path d="M200 312 L200 516 M196 340 h0 M200 300" stroke="#DCE3EC" strokeWidth={3} />}
+      {outfit === "shirt" && [350, 400, 450, 500].map((y) => <circle key={y} cx={203} cy={y} r={3} fill="#C9D2DE" />)}
+      {outfit === "vest" && (
+        <g>
+          <path d={smooth([[134, 320], [156, 300], [178, 292], [200, 366], [222, 292], [244, 300], [266, 320], [260, 420], [256, 504], [200, 514], [144, 504], [140, 420]], 0.3)} fill={OF.layer} {...O} />
+          <path d="M146 486 Q200 496 254 486 L256 504 Q200 516 144 504 Z" fill={OF.layerSh} {...O} strokeWidth={3} />
+          {[156, 168, 180, 192, 204, 216, 228, 240].map((x) => <path key={x} d={`M${x} 491 L${x} 508`} stroke="#555B68" strokeWidth={2} />)}
+          <path d="M244 318 Q252 410 248 480" stroke={OF.layerSh} strokeWidth={9} fill="none" opacity={0.55} strokeLinecap="round" />
+          <path d="M178 292 L200 366 L222 292" stroke="#5B6170" strokeWidth={6} fill="none" strokeLinejoin="round" />
+        </g>
+      )}
+      {outfit === "sweater" && (
+        <g>
+          <path d={smooth([[116, 336], [134, 302], [172, 290], [228, 290], [266, 302], [284, 336], [276, 420], [268, 512], [200, 520], [132, 512], [124, 420]], 0.35)} fill={OF.layer} {...O} />
+          <path d="M132 494 Q200 506 268 494 L268 514 Q200 526 132 514 Z" fill={OF.layerSh} {...O} strokeWidth={3} />
+          {[144, 158, 172, 186, 200, 214, 228, 242, 256].map((x) => <path key={x} d={`M${x} 500 L${x} 518`} stroke="#1D4F42" strokeWidth={2} />)}
+          <path d="M170 292 Q200 312 230 292 Q228 304 200 314 Q172 304 170 292 Z" fill={OF.layerSh} {...O} strokeWidth={3} />
+          <path d="M236 330 Q250 420 246 486" stroke={OF.layerSh} strokeWidth={9} fill="none" opacity={0.5} strokeLinecap="round" />
+        </g>
+      )}
+      {outfit === "cardigan" && (
+        <g>
+          <path d="M176 290 Q200 306 224 290" stroke="#E6E6E6" strokeWidth={5} fill="none" />
+          <path d={smooth([[116, 336], [134, 302], [172, 288], [184, 330], [190, 420], [192, 524], [134, 516], [124, 420]], 0.3)} fill={OF.layer} {...O} />
+          <path d={smooth([[284, 336], [266, 302], [228, 288], [216, 330], [210, 420], [208, 524], [266, 516], [276, 420]], 0.3)} fill={OF.layer} {...O} />
+          {[360, 410, 460].map((y) => <circle key={y} cx={186} cy={y} r={5} fill="#8A5A2E" stroke={TC.out} strokeWidth={2} />)}
+          <path d="M140 470 h30 v26 h-30 Z M230 470 h30 v26 h-30 Z" fill={OF.layerSh} stroke={TC.out} strokeWidth={2.5} />
+        </g>
+      )}
+      {outfit === "blazer" && (
+        <g>
+          <path d={smooth([[116, 336], [134, 302], [172, 288], [184, 330], [196, 420], [196, 540], [130, 534], [124, 420]], 0.3)} fill={OF.layer} {...O} />
+          <path d={smooth([[284, 336], [266, 302], [228, 288], [216, 330], [204, 420], [204, 540], [270, 534], [276, 420]], 0.3)} fill={OF.layer} {...O} />
+          <path d="M172 288 L160 330 L178 352 L190 420 M228 288 L240 330 L222 352 L210 420" stroke={OF.layerSh} strokeWidth={5} fill="none" strokeLinejoin="round" />
+          <circle cx={200} cy={448} r={5} fill={OF.layerSh} stroke={TC.out} strokeWidth={2} />
+          <path d="M226 400 h28" stroke={OF.layerSh} strokeWidth={5} strokeLinecap="round" />
+        </g>
+      )}
+      {/* collar + tie (shirt outfits) / tee neckline */}
+      {OF.tie && <path d="M200 304 L191 320 L196 358 L200 368 L204 358 L209 320 Z" fill={OF.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />}
+      {OF.tie && <path d="M191 298 L200 312 L209 298 L205 291 L195 291 Z" fill={OF.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />}
+      {outfit !== "cardigan" && <path d="M174 284 L198 304 L182 318 Z M226 284 L202 304 L218 318 Z" fill={TC.white} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />}
+      {/* ---------- left arm (gesture) ---------- */}
+      <path d={armPath(134, 324, lex, ley, lwx, lwy)} fill={OF.sleeve} {...O} />
+      {leftHand !== "pocket" && <path d={cuff(lex, ley, lwx, lwy, 16)} fill={OF.cuff} {...O} strokeWidth={3} />}
+      <path d={`M${lex + 2} ${ley - 6} q8 6 16 4`} stroke={OF.sleeveSh} strokeWidth={3} fill="none" strokeLinecap="round" />
+      {leftHand === "pocket" && <path d="M138 512 q10 6 22 2" stroke={TC.out} strokeWidth={3} fill="none" strokeLinecap="round" />}
+      {leftHand === "relaxed" && (
+        <g transform={`translate(${lwx} ${lwy + 4}) scale(1.3)`}>
+          {[-9, -3, 3, 9].map((fx, i) => (
+            <path key={i} d={smooth([[fx - 4, 6], [fx + 4, 6], [fx + 4.5, 22 + [0, 3, 3, -1][i]], [fx, 27 + [0, 3, 3, -1][i]], [fx - 4.5, 22 + [0, 3, 3, -1][i]]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={2.8} strokeLinejoin="round" />
+          ))}
+          <path d={smooth([[-13, -6], [13, -6], [15, 8], [10, 16], [-10, 16], [-15, 8]], 0.45)} fill={TC.skin} {...O} />
+          <path d={smooth([[10, 0], [20, 6], [22, 16], [17, 19], [12, 12]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={2.8} strokeLinejoin="round" />
+          <path d="M-6 8 q6 4 12 0" stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />
+        </g>
+      )}
+      {(leftHand === "openPalm" || leftHand === "wave") && <g transform={`translate(${lwx} ${lwy}) rotate(${lAng}) scale(1.15)`}><OpenPalm spread={leftHand === "wave" ? 1.6 : 1} /></g>}
+      {leftHand === "wave" && <path d={`M${lwx - 40} ${lwy - 70} q-10 14 0 28 M${lwx - 52} ${lwy - 78} q-14 20 0 42`} stroke={TC.out} strokeWidth={4} fill="none" strokeLinecap="round" opacity={0.6} />}
+      {leftHand === "fingerUp" && <g transform={`translate(${lwx} ${lwy}) rotate(${lAng}) scale(1.15)`}><FingerUp /></g>}
+      {leftHand === "thumbsUp" && <g transform={`translate(${lwx} ${lwy}) rotate(${lAng}) scale(1.15)`}><ThumbsUp /></g>}
 
       {/* ---------- pointing arm ---------- */}
-      <path d={armPath(sx, sy, elx, ely, hx, hy)} fill={TC.shirt} {...O} />
-      <path d={cuff(elx, ely, hx, hy, 18)} fill={TC.shirtSh} {...O} strokeWidth={3} />
-      <path d={`M${elx - 8} ${ely - 4} q6 6 14 4 M${elx - 2} ${ely + 8} q6 4 12 0`} stroke={TC.shirtSh} strokeWidth={3} fill="none" strokeLinecap="round" />
+      <path d={armPath(sx, sy, elx, ely, hx, hy)} fill={OF.sleeve} {...O} />
+      <path d={cuff(elx, ely, hx, hy, 18)} fill={OF.cuff} {...O} strokeWidth={3} />
+      <path d={`M${elx - 8} ${ely - 4} q6 6 14 4 M${elx - 2} ${ely + 8} q6 4 12 0`} stroke={OF.sleeveSh} strokeWidth={3} fill="none" strokeLinecap="round" />
       <g strokeLinecap="round">
         <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.out} strokeWidth={12} />
         <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.stick} strokeWidth={7} />
