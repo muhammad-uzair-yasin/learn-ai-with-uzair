@@ -1,5 +1,10 @@
 # Publish log — Learn AI With Uzair (@uzair.devops, UCZYmYaoskkNkoOE7LyJOKuw)
 
+## 2026-11-01 — Agent School Lesson 1: "AI Doesn't Think — It Predicts 🤯 (Free AI Course · Lesson 1)"
+- YouTube: https://youtu.be/uFixPaNnc_w (1:29) — published live Nov 1, public, playlist M1 (PLEJNaKpmtTQw), thumbnail applied (cdn.postsiva.com/uploads/images/learn-ai/agent-school-l001-thumb.jpg). Postsiva media_id f97561eb-adf9-4c76-89b5-c2e5add53ab0.
+- First lesson in the LOCKED format (2D classroom, Teacher2D in navy blazer, pen-written big screen, persistent title, no SFX). Reference copy: reference/L001-ai-predicts/.
+- Voice: Uzair's ElevenLabs clone, eleven_v4 + emotion tags (take C). Cross-posts: not yet.
+
 ## 2026-10-31 — Agent School trailer: "FREE AI Course Starts Tomorrow — Zero Coding Needed (Agent School)"
 - YouTube: https://youtu.be/CCi9tOoL0Vs (1:05)
 - Cross-posts (caption carries the YT link + channel link): Instagram https://www.instagram.com/reel/DfKGUlbhC7e/ · Facebook https://www.facebook.com/reel/122174582864963235 · TikTok (published) · LinkedIn page (published) · Threads (post 18118423556105482) · Bluesky (published, encoding) · Mastodon https://mastodon.social/@uzairyasin/117535399329260689
