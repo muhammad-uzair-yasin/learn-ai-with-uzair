@@ -123,11 +123,20 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
       <path d={armPath(106, 432, 106, 432, 170, 470, true)} fill={TC.shirt} {...O} />
       <path d={cuff(106, 432, 170, 470, 19)} fill={TC.shirtSh} {...O} strokeWidth={3} />
       <path d="M118 444 q8 8 18 6 M126 432 q6 6 14 6" stroke={TC.shirtSh} strokeWidth={3} fill="none" strokeLinecap="round" />
-      <g transform="translate(184 474) rotate(-28)">
-        {[-12, -4, 4, 12].map((y, i) => <rect key={i} x={6} y={y - 4} width={[22, 26, 25, 20][i]} height={9} rx={4.5} fill={TC.skin} stroke={TC.out} strokeWidth={2.5} />)}
-        <ellipse cx={0} cy={0} rx={16} ry={17} fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
-        <path d="M-2 -14 q8 -14 18 -8" fill="none" stroke={TC.out} strokeWidth={3} strokeLinecap="round" />
-        <path d="M-6 6 q6 4 12 0" fill="none" stroke={TC.skinSh} strokeWidth={3} strokeLinecap="round" />
+      {/* open hand holding the book: palm on the cover, fingers curling over the right edge */}
+      <g transform="translate(180 474) rotate(-38)">
+        {/* fingers (drawn first, palm overlaps their base); lengths: pinky..index */}
+        {[[ 13, 20], [4, 26], [-5, 27], [-14, 24]].map(([y, len], i) => (
+          <g key={i}>
+            <path d={smooth([[6, y - 4.5], [6 + len - 4, y - 4.5], [6 + len + 1, y], [6 + len - 4, y + 4.5], [6, y + 4.5]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+            <path d={`M${6 + len * 0.55} ${y - 3.5} q2 3.5 0 7`} stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />
+          </g>
+        ))}
+        {/* palm / back of hand */}
+        <path d={smooth([[-14, -14], [6, -18], [14, -8], [14, 10], [4, 18], [-14, 14], [-20, 0]], 0.45)} fill={TC.skin} {...O} />
+        <path d="M2 -10 q4 10 0 20" stroke={TC.skinSh} strokeWidth={2.5} fill="none" strokeLinecap="round" opacity={0.8} />
+        {/* thumb on top */}
+        <path d={smooth([[-10, -12], [0, -24], [10, -32], [16, -30], [14, -24], [4, -14]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
       </g>
 
       {/* ---------- pointing arm ---------- */}
@@ -139,10 +148,18 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
         <path d={`M${st1x} ${st1y} L${st2x} ${st2y}`} stroke={TC.stick} strokeWidth={7} />
         <circle cx={st2x} cy={st2y} r={6.5} fill={TC.white} stroke={TC.out} strokeWidth={3} />
       </g>
+      {/* fist gripping the pointer: local +x = along the stick (toward its tip) */}
       <g transform={`translate(${hx} ${hy}) rotate(${handAng})`}>
-        <path d={smooth([[-16, -12], [6, -17], [20, -10], [22, 6], [12, 16], [-10, 15], [-18, 4]], 0.4)} fill={TC.skin} {...O} />
-        <path d="M6 -14 Q10 0 6 14 M14 -11 Q18 0 14 12" stroke={TC.skinSh} strokeWidth={3} fill="none" strokeLinecap="round" />
-        <ellipse cx={-2} cy={-15} rx={11} ry={6} fill={TC.skin} {...O} strokeWidth={3} />
+        {/* back of the hand / palm */}
+        <path d={smooth([[-22, -10], [-6, -15], [10, -13], [16, 0], [10, 14], [-8, 16], [-22, 10]], 0.45)} fill={TC.skin} {...O} />
+        {/* four curled fingers stacked along the stick (pinky at the back, index at the front) */}
+        {[-10, -1, 8, 17].map((x, i) => (
+          <path key={i} d={smooth([[x - 5, 2], [x + 5, 2], [x + 5.5, 14], [x, 19.5], [x - 5.5, 14]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+        ))}
+        {[-10, -1, 8, 17].map((x, i) => <path key={`k${i}`} d={`M${x - 3} 11 q3 2 6 0`} stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />)}
+        {/* thumb lying along the top of the stick */}
+        <path d={smooth([[-12, -9], [6, -16], [22, -12], [26, -7], [20, -3], [4, -5], [-10, -2]], 0.45)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+        <path d="M21 -11 q3 1 3 4" stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />
       </g>
       {/* neck */}
       <path d="M180 248 L180 292 Q200 302 220 292 L220 248 Z" fill={TC.skinSh} stroke={TC.out} strokeWidth={SW} />
