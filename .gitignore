@@ -8,3 +8,4 @@ episodes/*/still_*.png
 .DS_Store
 engine/public/models/
 engine/node_modules
+engine/src/build_*/

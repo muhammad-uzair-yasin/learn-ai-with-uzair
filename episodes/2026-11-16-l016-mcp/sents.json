@@ -1,0 +1,122 @@
+[
+[
+"This is the USB-C of AI.",
+0.08,
+1.826,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson sixteen.",
+2.126,
+4.488,
+"host"
+],
+[
+"Yesterday: tools let AI act.",
+5.038,
+6.914,
+"host"
+],
+[
+"Today's problem: every app needed its own custom tool code.",
+7.214,
+10.643,
+"host"
+],
+[
+"MCP \u2014 the Model Context Protocol \u2014 fixes that.",
+11.193,
+14.33,
+"host"
+],
+[
+"Anthropic released it as an open standard in late 2024.",
+14.63,
+19.11,
+"host"
+],
+[
+"Remember drawers full of different chargers?",
+19.66,
+21.794,
+"host"
+],
+[
+"USB-C made one plug fit everything.",
+22.094,
+24.401,
+"host"
+],
+[
+"MCP does that for AI tools.",
+24.701,
+26.734,
+"host"
+],
+[
+"Build an MCP server once \u2014 for your calendar, your database, your files \u2014 and any AI app that speaks MCP can plug into it.",
+27.284,
+34.91,
+"host"
+],
+[
+"And it spread fast.",
+35.46,
+36.529,
+"host"
+],
+[
+"OpenAI, Google and many others added support.",
+36.829,
+39.767,
+"host"
+],
+[
+"A plug that fits everything also needs care: only connect servers you trust, and give them the least access they need.",
+40.317,
+46.8,
+"host"
+],
+[
+"Remember: build the tool once.",
+47.35,
+48.995,
+"host"
+],
+[
+"Plug it into any AI.",
+49.295,
+50.64,
+"host"
+],
+[
+"That's MCP.",
+50.94,
+52.062,
+"host"
+],
+[
+"Tomorrow\u2026 your agent remembers you.",
+52.612,
+54.53,
+"host"
+],
+[
+"Selectively.",
+54.83,
+55.688,
+"host"
+],
+[
+"This is Agent School.",
+56.238,
+57.43,
+"host"
+],
+[
+"Lesson seventeen drops tomorrow \u2014 subscribe so you don't fall behind!",
+57.73,
+61.74,
+"host"
+]
+]

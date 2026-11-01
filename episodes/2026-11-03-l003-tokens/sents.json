@@ -1,0 +1,122 @@
+[
+[
+"AI can't see the word \"strawberry.\" Seriously.",
+0.08,
+2.648,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson three.",
+2.948,
+5.096,
+"host"
+],
+[
+"Yesterday: machines learn from examples.",
+5.646,
+7.846,
+"host"
+],
+[
+"Today: what those examples actually look like to the machine.",
+8.146,
+11.229,
+"host"
+],
+[
+"AI doesn't read letters.",
+11.779,
+13.297,
+"host"
+],
+[
+"It reads tokens \u2014 chunks of text.",
+13.597,
+15.532,
+"host"
+],
+[
+"\"Strawberry\" might become \"straw\"\u2026 and \"berry.\"",
+15.832,
+18.126,
+"host"
+],
+[
+"Each token becomes a number.",
+18.676,
+20.27,
+"host"
+],
+[
+"So the model sees a short list of numbers \u2014 not ten letters.",
+20.57,
+23.873,
+"host"
+],
+[
+"That's why some models famously miscounted the R's in strawberry.",
+24.423,
+27.84,
+"host"
+],
+[
+"They never saw the letters!",
+28.14,
+29.424,
+"host"
+],
+[
+"In English, one token is roughly three quarters of a word.",
+29.974,
+33.057,
+"host"
+],
+[
+"A hundred words?",
+33.357,
+34.458,
+"host"
+],
+[
+"About a hundred and thirty tokens.",
+34.758,
+36.584,
+"host"
+],
+[
+"And tokens matter for you, because AI is priced in tokens, and its memory is measured in tokens.",
+37.134,
+42.991,
+"host"
+],
+[
+"Remember: AI doesn't read words.",
+43.541,
+45.576,
+"host"
+],
+[
+"It reads tokens.",
+45.876,
+47.036,
+"host"
+],
+[
+"Tomorrow\u2026 why your AI forgets you in the middle of a conversation.",
+47.586,
+51.058,
+"host"
+],
+[
+"This is Agent School.",
+51.608,
+52.8,
+"host"
+],
+[
+"Lesson four drops tomorrow \u2014 subscribe so you don't fall behind!",
+53.1,
+56.737,
+"host"
+]
+]

@@ -1,0 +1,122 @@
+[
+[
+"AI has no hands.",
+0.08,
+1.419,
+"host"
+],
+[
+"So how did it book a flight?",
+1.719,
+3.079,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson fifteen.",
+3.379,
+5.704,
+"host"
+],
+[
+"Yesterday: think, act, observe.",
+6.254,
+7.927,
+"host"
+],
+[
+"Today: how the \"act\" part actually works.",
+8.227,
+10.352,
+"host"
+],
+[
+"The model can't click anything.",
+10.902,
+12.406,
+"host"
+],
+[
+"It can only write text.",
+12.706,
+14.155,
+"host"
+],
+[
+"So we give it a menu of tools \u2014 each with a name and a description.",
+14.455,
+17.836,
+"host"
+],
+[
+"\"search_flights: finds flights between two cities.\"",
+18.136,
+20.813,
+"host"
+],
+[
+"When the model wants a tool, it writes a small structured request: search_flights, from Lahore, to Dubai, on Friday.",
+21.363,
+27.535,
+"host"
+],
+[
+"Your code reads that request, runs the real function, and hands the result back.",
+28.085,
+32.623,
+"host"
+],
+[
+"The model reads it\u2026 and decides the next step.",
+32.923,
+35.395,
+"host"
+],
+[
+"The AI writes the order.",
+35.944,
+37.37,
+"host"
+],
+[
+"Your code does the work.",
+37.67,
+39.046,
+"host"
+],
+[
+"That's also the safety point: your code decides which tools exist and what they're allowed to do.",
+39.596,
+44.731,
+"host"
+],
+[
+"Remember: tool calling means the AI asks, and your code acts.",
+45.281,
+48.753,
+"host"
+],
+[
+"Tomorrow\u2026 the USB-C of AI.",
+49.303,
+51.161,
+"host"
+],
+[
+"What is MCP?",
+51.461,
+52.69,
+"host"
+],
+[
+"This is Agent School.",
+53.24,
+54.432,
+"host"
+],
+[
+"Lesson sixteen drops tomorrow \u2014 subscribe so you don't fall behind!",
+54.732,
+58.595,
+"host"
+]
+]

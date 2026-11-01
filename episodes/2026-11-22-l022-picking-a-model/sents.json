@@ -1,0 +1,116 @@
+[
+[
+"The best AI model\u2026 is usually the cheaper one.",
+0.08,
+2.909,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-two.",
+3.209,
+5.706,
+"host"
+],
+[
+"Everyone wants the biggest, smartest model.",
+6.256,
+8.46,
+"host"
+],
+[
+"Your wallet disagrees.",
+8.76,
+10.099,
+"host"
+],
+[
+"Big models: best at hard reasoning, slower, much more expensive.",
+10.649,
+14.401,
+"host"
+],
+[
+"Small models: fast, cheap \u2014 and great at simple, clear tasks.",
+14.701,
+18.113,
+"host"
+],
+[
+"Sorting emails?",
+18.663,
+19.711,
+"host"
+],
+[
+"Extracting a name from a form?",
+20.011,
+21.627,
+"host"
+],
+[
+"A small model does it perfectly, for a fraction of the price.",
+21.927,
+25.237,
+"host"
+],
+[
+"So builders route the work: small model for the easy ninety percent, big model only when the task is truly hard.",
+25.787,
+31.996,
+"host"
+],
+[
+"How to pick: write ten real examples of your task.",
+32.546,
+35.204,
+"host"
+],
+[
+"Try the cheapest model first.",
+35.504,
+37.144,
+"host"
+],
+[
+"Move up only if it fails.",
+37.444,
+38.977,
+"host"
+],
+[
+"Remember: start small.",
+39.527,
+40.823,
+"host"
+],
+[
+"Upgrade only when the task proves it needs more.",
+41.123,
+43.637,
+"host"
+],
+[
+"Tomorrow\u2026 what one AI question actually costs.",
+44.187,
+46.925,
+"host"
+],
+[
+"We'll make our first API call.",
+47.225,
+48.984,
+"host"
+],
+[
+"This is Agent School.",
+49.534,
+50.726,
+"host"
+],
+[
+"Lesson twenty-three drops tomorrow \u2014 subscribe so you don't fall behind!",
+51.026,
+55.03,
+"host"
+]
+]

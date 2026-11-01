@@ -1,0 +1,116 @@
+[
+[
+"The four things every production agent needs.",
+0.08,
+2.489,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-seven.",
+2.789,
+5.448,
+"host"
+],
+[
+"A demo can be messy.",
+5.998,
+7.258,
+"host"
+],
+[
+"A real product can't.",
+7.558,
+8.824,
+"host"
+],
+[
+"Here's the checklist.",
+9.124,
+10.163,
+"host"
+],
+[
+"One: guardrails.",
+10.713,
+11.772,
+"host"
+],
+[
+"Least access, and human approval for risky actions.",
+12.072,
+14.908,
+"host"
+],
+[
+"Two: evals.",
+15.458,
+16.339,
+"host"
+],
+[
+"A test set you run before every change.",
+16.639,
+18.789,
+"host"
+],
+[
+"Three: limits.",
+19.339,
+20.193,
+"host"
+],
+[
+"Step limits, budgets, timeouts \u2014 so nothing runs away.",
+20.493,
+23.498,
+"host"
+],
+[
+"Four: observability.",
+24.048,
+25.397,
+"host"
+],
+[
+"Logs of every thought, tool call, and result \u2014 so when something goes wrong, you can see exactly why.",
+25.697,
+31.091,
+"host"
+],
+[
+"Miss one, and you'll find out the hard way.",
+31.641,
+33.773,
+"host"
+],
+[
+"Have all four, and you can fix anything fast.",
+34.073,
+36.423,
+"host"
+],
+[
+"Remember: guardrails, evals, limits, logs.",
+36.973,
+39.502,
+"host"
+],
+[
+"Tomorrow\u2026 an entire AI agent in one picture.",
+40.052,
+42.957,
+"host"
+],
+[
+"This is Agent School.",
+43.507,
+44.699,
+"host"
+],
+[
+"Lesson twenty-eight drops tomorrow \u2014 subscribe so you don't fall behind!",
+44.999,
+48.986,
+"host"
+]
+]

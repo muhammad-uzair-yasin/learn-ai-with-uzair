@@ -1,0 +1,122 @@
+[
+[
+"Your AI forgets you\u2026 in the middle of a conversation.",
+0.08,
+3.006,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson four.",
+3.306,
+5.413,
+"host"
+],
+[
+"Yesterday: AI reads tokens.",
+5.963,
+7.854,
+"host"
+],
+[
+"Today: how many tokens it can hold at once.",
+8.154,
+10.485,
+"host"
+],
+[
+"Every model has a context window \u2014 its working memory.",
+11.035,
+14.23,
+"host"
+],
+[
+"Your messages, its replies, any files\u2026 all must fit inside.",
+14.53,
+17.909,
+"host"
+],
+[
+"Picture a desk.",
+18.459,
+19.37,
+"host"
+],
+[
+"Everything on the desk, the AI can see.",
+19.67,
+21.771,
+"host"
+],
+[
+"Fall off the desk\u2026 and it's gone.",
+22.071,
+23.739,
+"host"
+],
+[
+"Chat long enough and the window fills up.",
+24.289,
+26.186,
+"host"
+],
+[
+"The oldest messages slide off the edge.",
+26.486,
+28.57,
+"host"
+],
+[
+"That rule you set an hour ago?",
+28.87,
+30.557,
+"host"
+],
+[
+"It might not be on the desk anymore.",
+30.857,
+32.583,
+"host"
+],
+[
+"Windows are huge today \u2014 hundreds of thousands of tokens on many models.",
+33.133,
+37.447,
+"host"
+],
+[
+"But huge isn't infinite, and a crowded desk makes answers worse.",
+37.747,
+41.286,
+"host"
+],
+[
+"So for long work: restate what matters, or start a fresh chat with a short summary.",
+41.836,
+46.082,
+"host"
+],
+[
+"Remember: if it's not in the context window, the AI doesn't know it.",
+46.632,
+50.107,
+"host"
+],
+[
+"Tomorrow\u2026 why AI lies with a straight face.",
+50.657,
+53.134,
+"host"
+],
+[
+"This is Agent School.",
+53.684,
+54.876,
+"host"
+],
+[
+"Lesson five drops tomorrow \u2014 subscribe so you don't fall behind!",
+55.176,
+58.988,
+"host"
+]
+]

@@ -1,0 +1,122 @@
+[
+[
+"AI doesn't see your photo.",
+0.08,
+1.657,
+"host"
+],
+[
+"It reads it.",
+1.957,
+2.776,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson eleven.",
+3.076,
+5.431,
+"host"
+],
+[
+"We know AI reads tokens.",
+5.981,
+7.723,
+"host"
+],
+[
+"Here's the twist: pictures can become tokens too.",
+8.023,
+10.782,
+"host"
+],
+[
+"A multimodal model chops an image into small patches.",
+11.332,
+14.511,
+"host"
+],
+[
+"Each patch becomes a token \u2014 just like a chunk of a word.",
+14.811,
+18.016,
+"host"
+],
+[
+"Then the same prediction machine reads image tokens and text tokens side by side.",
+18.566,
+23.28,
+"host"
+],
+[
+"That's how you snap a fridge and ask \"what can I cook?\" \u2014 or show a chart and ask \"what's the trend?\"",
+23.83,
+28.453,
+"host"
+],
+[
+"Audio works the same way.",
+29.003,
+30.526,
+"host"
+],
+[
+"Sound becomes tokens.",
+30.826,
+32.157,
+"host"
+],
+[
+"That's how voice assistants listen.",
+32.457,
+34.215,
+"host"
+],
+[
+"But it can still misread \u2014 tiny text, crowded charts, counting objects.",
+34.764,
+38.571,
+"host"
+],
+[
+"Double-check what matters.",
+38.871,
+40.194,
+"host"
+],
+[
+"Remember: to AI, everything becomes tokens.",
+40.744,
+43.33,
+"host"
+],
+[
+"Words, pictures, sound.",
+43.63,
+44.978,
+"host"
+],
+[
+"Tomorrow\u2026 stop fine-tuning.",
+45.528,
+47.115,
+"host"
+],
+[
+"Here's what to do instead.",
+47.415,
+48.773,
+"host"
+],
+[
+"This is Agent School.",
+49.323,
+50.515,
+"host"
+],
+[
+"Lesson twelve drops tomorrow \u2014 subscribe so you don't fall behind!",
+50.815,
+54.574,
+"host"
+]
+]

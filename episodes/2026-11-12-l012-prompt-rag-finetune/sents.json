@@ -1,0 +1,152 @@
+[
+[
+"Stop fine-tuning.",
+0.08,
+1.243,
+"host"
+],
+[
+"At least\u2026 not yet.",
+1.543,
+2.615,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twelve.",
+2.915,
+5.148,
+"host"
+],
+[
+"You now know three ways to make AI fit your job.",
+5.698,
+8.302,
+"host"
+],
+[
+"Today: which one to pick.",
+8.602,
+9.917,
+"host"
+],
+[
+"One: prompting.",
+10.467,
+11.391,
+"host"
+],
+[
+"Change the instructions.",
+11.691,
+12.999,
+"host"
+],
+[
+"Free, instant \u2014 always try this first.",
+13.299,
+15.443,
+"host"
+],
+[
+"Two: RAG.",
+15.993,
+16.753,
+"host"
+],
+[
+"Give it your knowledge \u2014 documents, policies, products.",
+17.053,
+19.853,
+"host"
+],
+[
+"Perfect when the facts change.",
+20.153,
+21.676,
+"host"
+],
+[
+"Three: fine-tuning.",
+22.226,
+23.383,
+"host"
+],
+[
+"Retrain the model on your examples.",
+23.683,
+25.652,
+"host"
+],
+[
+"It changes how it behaves \u2014 its style, its format \u2014 not so much what it knows.",
+25.952,
+30.201,
+"host"
+],
+[
+"Most people jump straight to fine-tuning\u2026 to teach the AI facts.",
+30.751,
+34.487,
+"host"
+],
+[
+"That's the expensive way to do RAG.",
+34.787,
+37.041,
+"host"
+],
+[
+"So the order is: prompt first.",
+37.591,
+39.253,
+"host"
+],
+[
+"Add RAG when it needs knowledge.",
+39.553,
+41.452,
+"host"
+],
+[
+"Fine-tune only when it needs a new behavior you can't prompt.",
+41.752,
+44.928,
+"host"
+],
+[
+"Remember: prompt, then RAG, then fine-tune.",
+45.478,
+48.112,
+"host"
+],
+[
+"In that order.",
+48.412,
+49.242,
+"host"
+],
+[
+"Tomorrow\u2026 a chatbot answers.",
+49.792,
+51.416,
+"host"
+],
+[
+"An agent acts.",
+51.716,
+52.692,
+"host"
+],
+[
+"This is Agent School.",
+53.242,
+54.434,
+"host"
+],
+[
+"Lesson thirteen drops tomorrow \u2014 subscribe so you don't fall behind!",
+54.734,
+58.619,
+"host"
+]
+]

@@ -1,0 +1,158 @@
+[
+[
+"Let's build a real AI agent.",
+0.08,
+1.983,
+"host"
+],
+[
+"Right now.",
+2.283,
+3.019,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-nine.",
+3.319,
+5.847,
+"host"
+],
+[
+"Our agent's job: answer questions about the weather and do the math.",
+6.397,
+10.009,
+"host"
+],
+[
+"Two tools.",
+10.309,
+11.091,
+"host"
+],
+[
+"Step one: the tools.",
+11.641,
+12.866,
+"host"
+],
+[
+"A function called get_weather.",
+13.166,
+14.675,
+"host"
+],
+[
+"A function called calculate.",
+14.975,
+16.634,
+"host"
+],
+[
+"Each with a short description the model can read.",
+16.934,
+19.346,
+"host"
+],
+[
+"Step two: the system prompt.",
+19.896,
+21.423,
+"host"
+],
+[
+"\"You are a helpful assistant.",
+21.723,
+23.126,
+"host"
+],
+[
+"Use tools when you need facts or math.\"",
+23.426,
+25.449,
+"host"
+],
+[
+"Step three: the loop.",
+25.999,
+27.132,
+"host"
+],
+[
+"Send the conversation and the tool list to the model.",
+27.432,
+30.151,
+"host"
+],
+[
+"If it asks for a tool \u2014 run it, add the result, and loop again.",
+30.451,
+33.583,
+"host"
+],
+[
+"If it answers \u2014 we're done.",
+33.883,
+35.145,
+"host"
+],
+[
+"Step four: a stop rule.",
+35.695,
+37.203,
+"host"
+],
+[
+"Maximum five steps.",
+37.503,
+38.811,
+"host"
+],
+[
+"That's the whole agent.",
+39.361,
+40.577,
+"host"
+],
+[
+"Around thirty lines of code.",
+40.877,
+42.469,
+"host"
+],
+[
+"No framework.",
+42.769,
+43.724,
+"host"
+],
+[
+"Remember: tools, prompt, loop, limit.",
+44.274,
+46.33,
+"host"
+],
+[
+"That's an agent you can build tonight.",
+46.63,
+48.434,
+"host"
+],
+[
+"Tomorrow\u2026 we run it live, add a guardrail, and finish month one.",
+48.984,
+52.3,
+"host"
+],
+[
+"This is Agent School.",
+52.85,
+54.042,
+"host"
+],
+[
+"The final lesson of month one drops tomorrow \u2014 subscribe so you don't miss it!",
+54.342,
+58.462,
+"host"
+]
+]

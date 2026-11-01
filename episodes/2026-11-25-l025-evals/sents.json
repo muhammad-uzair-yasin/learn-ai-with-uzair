@@ -1,0 +1,122 @@
+[
+[
+"Your agent passed your test\u2026 and failed a hundred users.",
+0.08,
+3.188,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-five.",
+3.487,
+6.044,
+"host"
+],
+[
+"You tried it three times.",
+6.594,
+7.901,
+"host"
+],
+[
+"It worked.",
+8.201,
+8.901,
+"host"
+],
+[
+"You shipped it.",
+9.201,
+10.018,
+"host"
+],
+[
+"Then real people arrived.",
+10.318,
+11.822,
+"host"
+],
+[
+"Real users ask in ways you never imagined.",
+12.372,
+14.894,
+"host"
+],
+[
+"Typos, slang, weird edge cases.",
+15.194,
+17.179,
+"host"
+],
+[
+"And AI is random \u2014 it can pass once and fail the next time.",
+17.479,
+20.988,
+"host"
+],
+[
+"That's why builders use evals: a test set of real examples, each with what a good answer looks like.",
+21.538,
+27.098,
+"host"
+],
+[
+"Fifty, a hundred, more.",
+27.398,
+28.827,
+"host"
+],
+[
+"Every time you change the prompt or the model, run all of them \u2014 and get a score.",
+29.377,
+33.431,
+"host"
+],
+[
+"Did it get better\u2026 or worse?",
+33.731,
+35.239,
+"host"
+],
+[
+"And every failure a user reports becomes a new test.",
+35.789,
+38.709,
+"host"
+],
+[
+"Your eval set grows smarter every week.",
+39.009,
+41.173,
+"host"
+],
+[
+"Remember: one good demo proves nothing.",
+41.723,
+43.896,
+"host"
+],
+[
+"A test set with a score proves progress.",
+44.196,
+46.187,
+"host"
+],
+[
+"Tomorrow\u2026 an agent loop can empty your wallet overnight.",
+46.737,
+49.765,
+"host"
+],
+[
+"This is Agent School.",
+50.315,
+51.507,
+"host"
+],
+[
+"Lesson twenty-six drops tomorrow \u2014 subscribe so you don't fall behind!",
+51.807,
+55.836,
+"host"
+]
+]

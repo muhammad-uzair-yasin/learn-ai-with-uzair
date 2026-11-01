@@ -1,0 +1,116 @@
+[
+[
+"Build your agent from scratch\u2026 or use a framework?",
+0.08,
+2.742,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-four.",
+3.042,
+5.577,
+"host"
+],
+[
+"By now you know an agent is a loop, tools, and a model.",
+6.127,
+9.034,
+"host"
+],
+[
+"That's surprisingly little code.",
+9.334,
+11.0,
+"host"
+],
+[
+"From scratch: a few dozen lines.",
+11.55,
+13.245,
+"host"
+],
+[
+"You see every step, you control everything, and nothing is hidden.",
+13.545,
+16.749,
+"host"
+],
+[
+"Perfect for learning \u2014 and for simple agents.",
+17.049,
+19.43,
+"host"
+],
+[
+"Frameworks give you ready-made pieces: memory, multi-agent teams, tracing, retries.",
+19.98,
+24.981,
+"host"
+],
+[
+"Faster for big systems.",
+25.281,
+26.745,
+"host"
+],
+[
+"But they also hide things.",
+27.295,
+28.738,
+"host"
+],
+[
+"And when something breaks inside a framework you don't understand\u2026 good luck.",
+29.038,
+32.78,
+"host"
+],
+[
+"So here's the rule.",
+33.33,
+34.373,
+"host"
+],
+[
+"Build your first agent from scratch, to learn the loop.",
+34.673,
+37.331,
+"host"
+],
+[
+"Reach for a framework when you need what it gives you \u2014 not before.",
+37.631,
+40.91,
+"host"
+],
+[
+"Remember: learn the loop by hand.",
+41.46,
+43.167,
+"host"
+],
+[
+"Then let a framework save you time.",
+43.467,
+45.171,
+"host"
+],
+[
+"Tomorrow\u2026 your agent passed your test \u2014 and failed a hundred users.",
+45.721,
+49.313,
+"host"
+],
+[
+"This is Agent School.",
+49.863,
+51.055,
+"host"
+],
+[
+"Lesson twenty-five drops tomorrow \u2014 subscribe so you don't fall behind!",
+51.355,
+55.433,
+"host"
+]
+]

@@ -206,3 +206,36 @@ export const LessonThumbLayout: React.FC<{ tag: string; line1: string; strike?: 
     <g transform="translate(790 1230) rotate(-6)"><rect x={-250} y={-80} width={500} height={160} rx={36} fill={K.amber} stroke={K.ink} strokeWidth={7} /><text y={-6} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={62} fill={K.ink}>{bubble1}</text><text y={58} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={40} fill={K.ink}>{bubble2}</text></g>
   </svg>
 );
+
+// ================= SHARED HELPERS FOR EVERY LESSON =================
+/** cue finder: frame where the n-th occurrence of `word` starts (normalised, punctuation-free). Throws if missing. */
+export const cueFinder = (WORDS: [number, number, string][]) => (word: string, n = 1): number => {
+  const nm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  let k = 0; for (const w of WORDS) if (nm(w[2]) === word && ++k === n) return w[0];
+  throw new Error(`cue word not found: ${word} #${n}`);
+};
+/** Standard closing slide: "TOMORROW → LESSON n+1", the module progress dots, and the subscribe button. */
+export const EndSlide: React.FC<{ f: number; lesson: number; next: string; tomorrowAt: number; schoolAt: number; buttonAt: number; subscribeAt: number; total?: number; nextLabel?: string }> = ({ f, lesson, next, tomorrowAt, schoolAt, buttonAt, subscribeAt, total = 30, nextLabel }) => {
+  const clicked = f >= subscribeAt + 16;
+  return (
+    <g>
+      <Wr f={f} at={tomorrowAt} x={480} y={90} fs={46} t={nextLabel ?? `TOMORROW → LESSON ${lesson + 1}`} c={K.blue} dur={16} />
+      <Wr f={f} at={tomorrowAt + 18} x={480} y={150} fs={26} t={next} c={K.grey} dur={26} />
+      <Wr f={f} at={schoolAt} x={480} y={240} fs={28} t={`AGENT SCHOOL · MODULE 1 · ${total} LESSONS`} dur={18} />
+      {[...Array(total)].map((_, i) => { const p = pop(f, schoolAt + 10 + i * 1.2, 8); if (p <= 0) return null; const cx = 120 + (i % 10) * 80, cy = 300 + Math.floor(i / 10) * 74; const done = i < lesson, nx = i === lesson;
+        return (<g key={i} transform={`translate(${cx} ${cy}) scale(${p})`}><circle r={28} fill={done ? K.green : nx ? "#DCEBFF" : "#fff"} stroke={done ? K.green : nx ? K.blue : "#C9D3E6"} strokeWidth={4} opacity={nx ? 0.65 + 0.35 * Math.sin(f * 0.2) : 1} /><text y={9} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={24} fill={done ? "#fff" : nx ? K.blue : K.grey}>{i + 1}</text></g>); })}
+      <DCard f={f} at={buttonAt} x={290} y={502} w={380} h={76} r={38} fill={clicked ? "#5B6170" : "#FF2D3D"} stroke={clicked ? "#5B6170" : "#FF2D3D"} dur={10}>
+        <text x={480} y={553} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={36} fill="#fff">{clicked ? "SUBSCRIBED ✓" : "SUBSCRIBE"}</text>
+      </DCard>
+    </g>
+  );
+};
+/** Simple code/terminal card the pen "writes" line by line (for technical lessons). */
+export const CodeCard: React.FC<{ f: number; at: number; x: number; y: number; w: number; lines: string[]; title?: string; fs?: number; per?: number }> = ({ f, at, x, y, w, lines, title = "agent.py", fs = 24, per = 10 }) => (
+  <DCard f={f} at={at} x={x} y={y} w={w} h={70 + lines.length * (fs * 1.45)} fill="#0F1726" stroke="#0F1726">
+    <rect x={x} y={y} width={w} height={44} rx={22} fill="#1B2538" />
+    {["#FF5F57", "#FEBC2E", "#28C840"].map((c, i) => <circle key={i} cx={x + 26 + i * 22} cy={y + 22} r={7} fill={c} />)}
+    <text x={x + w / 2} y={y + 30} textAnchor="middle" fontFamily="DejaVu Sans Mono, monospace" fontSize={18} fill="#8B949E">{title}</text>
+    {lines.map((l, i) => { const t0 = at + 14 + i * per; const n = Math.round(l.length * clamp01((f - t0) / Math.max(6, l.length * 0.6))); return n > 0 ? <text key={i} x={x + 24} y={y + 80 + i * fs * 1.45} fontFamily="DejaVu Sans Mono, monospace" fontSize={fs} fill={l.trim().startsWith("#") ? "#7EE787" : "#E6EDF3"} xmlSpace="preserve">{l.slice(0, n)}</text> : null; })}
+  </DCard>
+);

@@ -1,0 +1,128 @@
+[
+[
+"Your AI has never read your files.",
+0.08,
+2.077,
+"host"
+],
+[
+"Until this.",
+2.377,
+3.193,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson nine.",
+3.493,
+5.695,
+"host"
+],
+[
+"We know AI only knows its training data, plus whatever is in its context window.",
+6.245,
+10.947,
+"host"
+],
+[
+"So how does a company chatbot know your refund policy?",
+11.497,
+14.183,
+"host"
+],
+[
+"It wasn't trained on it.",
+14.483,
+15.707,
+"host"
+],
+[
+"It uses RAG: Retrieval-Augmented Generation.",
+16.257,
+19.541,
+"host"
+],
+[
+"Three steps.",
+19.841,
+20.611,
+"host"
+],
+[
+"One: search your documents for the parts that match the question.",
+20.911,
+23.869,
+"host"
+],
+[
+"Two: paste those parts into the prompt.",
+24.169,
+26.056,
+"host"
+],
+[
+"Three: the model answers using them.",
+26.356,
+28.221,
+"host"
+],
+[
+"It's an open-book exam.",
+28.771,
+30.231,
+"host"
+],
+[
+"The AI doesn't memorize your files \u2014 it looks things up, right when you ask.",
+30.531,
+34.585,
+"host"
+],
+[
+"And it fights hallucination, because now the answer comes with a source you can check.",
+35.135,
+39.479,
+"host"
+],
+[
+"The hard part is the search.",
+40.029,
+41.512,
+"host"
+],
+[
+"Find the wrong page\u2026 get the wrong answer.",
+41.812,
+43.957,
+"host"
+],
+[
+"Remember: RAG means look it up first, then answer.",
+44.507,
+47.349,
+"host"
+],
+[
+"Tomorrow\u2026 how AI turns every sentence into coordinates.",
+47.899,
+51.155,
+"host"
+],
+[
+"That's how the search works.",
+51.455,
+52.69,
+"host"
+],
+[
+"This is Agent School.",
+53.24,
+54.432,
+"host"
+],
+[
+"Lesson ten drops tomorrow \u2014 subscribe so you don't fall behind!",
+54.732,
+58.419,
+"host"
+]
+]

@@ -1,0 +1,176 @@
+[
+[
+"Nobody programmed ChatGPT's answers.",
+0.08,
+2.588,
+"host"
+],
+[
+"Not one.",
+2.888,
+3.617,
+"host"
+],
+[
+"Welcome back to Agent School \u2014 lesson two.",
+3.917,
+6.126,
+"host"
+],
+[
+"Yesterday we learned AI predicts the next word.",
+6.676,
+9.208,
+"host"
+],
+[
+"Today: how it learned to predict so well.",
+9.508,
+11.471,
+"host"
+],
+[
+"Old software was rules.",
+12.021,
+13.471,
+"host"
+],
+[
+"A programmer wrote: if this, then that.",
+13.771,
+15.821,
+"host"
+],
+[
+"Every answer, typed by a human.",
+16.121,
+17.942,
+"host"
+],
+[
+"Machine learning flips it.",
+18.492,
+19.81,
+"host"
+],
+[
+"You don't write the rules.",
+20.11,
+21.304,
+"host"
+],
+[
+"You show examples\u2026 and the machine finds the rules itself.",
+21.604,
+24.878,
+"host"
+],
+[
+"Here's how.",
+25.428,
+26.179,
+"host"
+],
+[
+"Hide the next word in a sentence.",
+26.479,
+28.242,
+"host"
+],
+[
+"The model guesses.",
+28.542,
+29.64,
+"host"
+],
+[
+"It's wrong.",
+29.94,
+30.636,
+"host"
+],
+[
+"A little math nudges it\u2026 to be less wrong next time.",
+30.936,
+33.668,
+"host"
+],
+[
+"Then again.",
+33.968,
+34.737,
+"host"
+],
+[
+"And again.",
+35.037,
+35.751,
+"host"
+],
+[
+"Billions of times.",
+36.051,
+37.194,
+"host"
+],
+[
+"Those nudges tweak billions of tiny numbers called parameters.",
+37.744,
+40.981,
+"host"
+],
+[
+"Nobody sets them by hand.",
+41.281,
+42.814,
+"host"
+],
+[
+"They're learned.",
+43.114,
+43.854,
+"host"
+],
+[
+"That's why even its creators can't point to the line of code that writes an answer.",
+44.404,
+48.425,
+"host"
+],
+[
+"There isn't one.",
+48.725,
+49.624,
+"host"
+],
+[
+"Remember: programmers write rules.",
+50.174,
+52.003,
+"host"
+],
+[
+"Machines learn them from examples.",
+52.303,
+53.993,
+"host"
+],
+[
+"Tomorrow\u2026 why AI can't even see the word \"strawberry.\"",
+54.543,
+57.375,
+"host"
+],
+[
+"This is Agent School.",
+57.925,
+59.117,
+"host"
+],
+[
+"Lesson three drops tomorrow \u2014 subscribe so you don't fall behind!",
+59.417,
+63.079,
+"host"
+]
+]

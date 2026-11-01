@@ -1,0 +1,134 @@
+[
+[
+"Our agent goes live today.",
+0.08,
+1.653,
+"host"
+],
+[
+"Welcome to the final lesson of month one.",
+1.953,
+4.228,
+"host"
+],
+[
+"Yesterday we wrote it.",
+4.778,
+5.982,
+"host"
+],
+[
+"Now let's run it.",
+6.282,
+7.278,
+"host"
+],
+[
+"Question: \"It's thirty-one degrees in Lahore.",
+7.828,
+10.088,
+"host"
+],
+[
+"What's that in Fahrenheit?\"",
+10.388,
+11.737,
+"host"
+],
+[
+"Think: I need math.",
+12.287,
+13.392,
+"host"
+],
+[
+"Act: calculate.",
+13.692,
+14.752,
+"host"
+],
+[
+"Observe: eighty-seven point eight.",
+15.052,
+16.745,
+"host"
+],
+[
+"Answer: \"About eighty-eight degrees Fahrenheit.\" Two steps.",
+17.045,
+20.018,
+"host"
+],
+[
+"Done.",
+20.318,
+20.807,
+"host"
+],
+[
+"Now a guardrail.",
+21.357,
+22.351,
+"host"
+],
+[
+"We add a rule in code: any tool that sends or deletes needs a human \"yes\" first.",
+22.651,
+27.209,
+"host"
+],
+[
+"The agent can ask \u2014 but it can't act alone.",
+27.509,
+29.82,
+"host"
+],
+[
+"Thirty lessons ago, AI was a mystery.",
+30.37,
+32.729,
+"host"
+],
+[
+"Now you know how it predicts, learns, remembers, uses tools\u2026 and how to keep it safe.",
+33.029,
+37.664,
+"host"
+],
+[
+"Next month is Build Month.",
+38.214,
+39.686,
+"host"
+],
+[
+"Four real agents, built step by step.",
+39.986,
+42.192,
+"host"
+],
+[
+"Remember: you don't just use AI anymore.",
+42.742,
+45.003,
+"host"
+],
+[
+"You can build it.",
+45.303,
+46.229,
+"host"
+],
+[
+"This is Agent School.",
+46.779,
+47.971,
+"host"
+],
+[
+"Month two starts tomorrow \u2014 subscribe so you don't fall behind!",
+48.271,
+51.808,
+"host"
+]
+]

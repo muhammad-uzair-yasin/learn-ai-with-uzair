@@ -1,0 +1,122 @@
+[
+[
+"Ask AI the same question twice\u2026 get two different answers.",
+0.08,
+3.585,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson eight.",
+3.885,
+5.987,
+"host"
+],
+[
+"Remember: AI picks the next word from a list of probabilities.",
+6.537,
+9.88,
+"host"
+],
+[
+"But it doesn't always pick the top word.",
+10.43,
+12.335,
+"host"
+],
+[
+"It rolls weighted dice.",
+12.635,
+14.04,
+"host"
+],
+[
+"And a setting called temperature controls how wild those dice are.",
+14.34,
+17.807,
+"host"
+],
+[
+"Low temperature: it almost always takes the safest word.",
+18.357,
+21.676,
+"host"
+],
+[
+"Focused.",
+21.976,
+22.654,
+"host"
+],
+[
+"Repeatable.",
+22.954,
+23.689,
+"host"
+],
+[
+"High temperature: it takes risks.",
+24.239,
+26.054,
+"host"
+],
+[
+"Surprising words, creative ideas\u2026 and sometimes nonsense.",
+26.354,
+29.907,
+"host"
+],
+[
+"So: facts, code, data extraction \u2014 keep it low.",
+30.457,
+33.06,
+"host"
+],
+[
+"Brainstorming, stories, slogans \u2014 turn it up.",
+33.36,
+35.735,
+"host"
+],
+[
+"Not every app lets you change it, but behind the scenes this dial is always there.",
+36.285,
+40.645,
+"host"
+],
+[
+"Remember: low temperature for accuracy.",
+41.195,
+43.344,
+"host"
+],
+[
+"High temperature for creativity.",
+43.644,
+45.465,
+"host"
+],
+[
+"Tomorrow\u2026 your AI has never read your files.",
+46.015,
+48.555,
+"host"
+],
+[
+"Until this.",
+48.855,
+49.671,
+"host"
+],
+[
+"This is Agent School.",
+50.221,
+51.413,
+"host"
+],
+[
+"Lesson nine drops tomorrow \u2014 subscribe so you don't fall behind!",
+51.713,
+55.446,
+"host"
+]
+]

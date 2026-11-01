@@ -1,0 +1,176 @@
+[
+[
+"Every AI agent on Earth runs the same four-step loop.",
+0.08,
+3.296,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson fourteen.",
+3.596,
+5.975,
+"host"
+],
+[
+"Yesterday: an agent is a model with tools, a goal, and a loop.",
+6.525,
+9.781,
+"host"
+],
+[
+"Today: the loop.",
+10.081,
+11.009,
+"host"
+],
+[
+"Step one: think.",
+11.559,
+12.577,
+"host"
+],
+[
+"\"What's my next move?\" Step two: act.",
+12.877,
+15.065,
+"host"
+],
+[
+"Call a tool \u2014 search, calculate, send.",
+15.365,
+17.406,
+"host"
+],
+[
+"Step three: observe.",
+17.706,
+19.003,
+"host"
+],
+[
+"Read what came back.",
+19.303,
+20.437,
+"host"
+],
+[
+"Step four: repeat \u2014 or stop if the goal is done.",
+20.737,
+23.338,
+"host"
+],
+[
+"Think.",
+23.888,
+24.417,
+"host"
+],
+[
+"Act.",
+24.717,
+25.202,
+"host"
+],
+[
+"Observe.",
+25.502,
+26.222,
+"host"
+],
+[
+"Repeat.",
+26.522,
+27.185,
+"host"
+],
+[
+"Over and over until the job's finished.",
+27.485,
+29.495,
+"host"
+],
+[
+"Booking a flight?",
+30.045,
+31.019,
+"host"
+],
+[
+"Think: search flights.",
+31.319,
+32.396,
+"host"
+],
+[
+"Act: search.",
+32.696,
+33.536,
+"host"
+],
+[
+"Observe: ten results.",
+33.836,
+35.114,
+"host"
+],
+[
+"Think: compare prices.",
+35.414,
+36.805,
+"host"
+],
+[
+"And around it goes.",
+37.105,
+38.18,
+"host"
+],
+[
+"Every loop needs a stop rule.",
+38.73,
+40.273,
+"host"
+],
+[
+"A maximum number of steps \u2014 or an agent can spin forever.",
+40.573,
+43.758,
+"host"
+],
+[
+"Remember: think, act, observe, repeat.",
+44.308,
+46.318,
+"host"
+],
+[
+"That's every agent.",
+46.618,
+47.724,
+"host"
+],
+[
+"Tomorrow\u2026 AI has no hands.",
+48.274,
+50.122,
+"host"
+],
+[
+"So how did it book a flight?",
+50.422,
+51.782,
+"host"
+],
+[
+"This is Agent School.",
+52.332,
+53.524,
+"host"
+],
+[
+"Lesson fifteen drops tomorrow \u2014 subscribe so you don't fall behind!",
+53.824,
+57.736,
+"host"
+]
+]

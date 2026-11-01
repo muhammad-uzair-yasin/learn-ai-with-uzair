@@ -1,0 +1,122 @@
+[
+[
+"An agent loop can empty your wallet\u2026 overnight.",
+0.08,
+2.641,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-six.",
+2.941,
+5.474,
+"host"
+],
+[
+"Lesson twenty-three: every call costs tokens.",
+6.024,
+8.814,
+"host"
+],
+[
+"Now picture a loop that never stops.",
+9.114,
+11.018,
+"host"
+],
+[
+"A tool keeps failing.",
+11.568,
+12.83,
+"host"
+],
+[
+"The agent keeps retrying.",
+13.13,
+14.638,
+"host"
+],
+[
+"Each retry sends the whole growing conversation again.",
+14.938,
+17.873,
+"host"
+],
+[
+"Thousands of calls\u2026 while you sleep.",
+18.173,
+19.846,
+"host"
+],
+[
+"Four guards.",
+20.396,
+21.315,
+"host"
+],
+[
+"One: a maximum number of steps per task.",
+21.615,
+23.819,
+"host"
+],
+[
+"Two: a budget limit per task and per day.",
+24.119,
+26.412,
+"host"
+],
+[
+"Three: smaller models for simple steps.",
+26.712,
+28.761,
+"host"
+],
+[
+"Four: caching \u2014 don't pay twice for the same answer.",
+29.061,
+31.632,
+"host"
+],
+[
+"And set billing alerts with your provider.",
+32.182,
+34.151,
+"host"
+],
+[
+"If spending jumps, you hear about it before the bill arrives.",
+34.451,
+37.518,
+"host"
+],
+[
+"Most surprise bills are bugs, not busy users.",
+38.068,
+40.848,
+"host"
+],
+[
+"Remember: every loop needs a step limit and a budget.",
+41.398,
+44.046,
+"host"
+],
+[
+"Tomorrow\u2026 the four things every production agent needs.",
+44.596,
+47.549,
+"host"
+],
+[
+"This is Agent School.",
+48.099,
+49.291,
+"host"
+],
+[
+"Lesson twenty-seven drops tomorrow \u2014 subscribe so you don't fall behind!",
+49.591,
+53.668,
+"host"
+]
+]

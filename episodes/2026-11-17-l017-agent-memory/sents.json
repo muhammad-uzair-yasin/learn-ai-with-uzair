@@ -1,0 +1,116 @@
+[
+[
+"Your agent remembers you.",
+0.08,
+1.469,
+"host"
+],
+[
+"Selectively.",
+1.769,
+2.627,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson seventeen.",
+2.927,
+5.471,
+"host"
+],
+[
+"We know the context window is short-term memory \u2014 and it gets wiped.",
+6.021,
+9.754,
+"host"
+],
+[
+"So how do agents remember you next week?",
+10.054,
+12.229,
+"host"
+],
+[
+"Long-term memory lives outside the model, in a database.",
+12.779,
+16.122,
+"host"
+],
+[
+"Your agent saves important facts: \"prefers short answers,\" \"project deadline Friday.\"",
+16.422,
+21.312,
+"host"
+],
+[
+"Next time, it searches that memory \u2014 often with embeddings \u2014 and pulls only the relevant facts into the context window.",
+21.862,
+28.59,
+"host"
+],
+[
+"It doesn't replay your whole life.",
+29.14,
+30.813,
+"host"
+],
+[
+"It picks what matters right now.",
+31.113,
+32.788,
+"host"
+],
+[
+"And deciding what to forget matters too.",
+33.338,
+35.321,
+"host"
+],
+[
+"Old facts go stale.",
+35.621,
+36.937,
+"host"
+],
+[
+"Private things shouldn't be saved at all.",
+37.237,
+39.113,
+"host"
+],
+[
+"Good memory makes an agent feel like a teammate instead of a stranger every morning.",
+39.663,
+44.266,
+"host"
+],
+[
+"Remember: short-term memory is the context window.",
+44.816,
+47.578,
+"host"
+],
+[
+"Long-term memory is a database the agent searches.",
+47.878,
+51.063,
+"host"
+],
+[
+"Tomorrow\u2026 give an agent a huge task and watch it slice it up.",
+51.613,
+54.95,
+"host"
+],
+[
+"This is Agent School.",
+55.5,
+56.692,
+"host"
+],
+[
+"Lesson eighteen drops tomorrow \u2014 subscribe so you don't fall behind!",
+56.992,
+60.854,
+"host"
+]
+]

@@ -1,0 +1,128 @@
+[
+[
+"An entire AI agent\u2026 in one picture.",
+0.08,
+2.528,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-eight.",
+2.828,
+5.249,
+"host"
+],
+[
+"Everything you learned this month fits together.",
+5.799,
+7.959,
+"host"
+],
+[
+"Let's draw it.",
+8.259,
+9.092,
+"host"
+],
+[
+"In the middle: the model \u2014 the brain that predicts.",
+9.642,
+11.953,
+"host"
+],
+[
+"Around it: the system prompt, its job description.",
+12.253,
+14.858,
+"host"
+],
+[
+"The loop: think, act, observe, repeat.",
+15.408,
+17.266,
+"host"
+],
+[
+"Plugged into it: tools, often through MCP.",
+17.566,
+20.203,
+"host"
+],
+[
+"Next to it: memory \u2014 short-term context, long-term database.",
+20.503,
+24.017,
+"host"
+],
+[
+"And RAG, to look up your knowledge.",
+24.317,
+25.95,
+"host"
+],
+[
+"Wrapped around everything: guardrails, step limits, budgets.",
+26.5,
+29.816,
+"host"
+],
+[
+"And underneath: logs and evals, watching every move.",
+30.116,
+33.202,
+"host"
+],
+[
+"That's it.",
+33.752,
+34.403,
+"host"
+],
+[
+"That's an agent.",
+34.703,
+35.674,
+"host"
+],
+[
+"Every one you'll ever build is a version of this picture.",
+35.974,
+38.676,
+"host"
+],
+[
+"Remember: model, prompt, loop, tools, memory, knowledge \u2014 all inside guardrails.",
+39.226,
+43.909,
+"host"
+],
+[
+"Tomorrow\u2026 we stop drawing.",
+44.459,
+45.892,
+"host"
+],
+[
+"We build a real agent.",
+46.192,
+47.589,
+"host"
+],
+[
+"Right now.",
+47.889,
+48.625,
+"host"
+],
+[
+"This is Agent School.",
+49.175,
+50.367,
+"host"
+],
+[
+"Lesson twenty-nine drops tomorrow \u2014 subscribe so you don't fall behind!",
+50.667,
+54.693,
+"host"
+]
+]

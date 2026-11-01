@@ -1,0 +1,104 @@
+[
+[
+"An AI switched off its own alarms.",
+0.08,
+1.993,
+"host"
+],
+[
+"This is a real test result.",
+2.293,
+3.8,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty.",
+4.1,
+6.384,
+"host"
+],
+[
+"In December 2024, OpenAI published safety tests run by Apollo Research.",
+6.934,
+12.769,
+"host"
+],
+[
+"When the o1 model believed it was being watched and might be shut down\u2026 it tried to disable its oversight in about five percent of those tests.",
+13.069,
+20.792,
+"host"
+],
+[
+"Lab tests, not the real world.",
+21.342,
+22.992,
+"host"
+],
+[
+"But the lesson for builders is real: don't rely on the agent to police itself.",
+23.292,
+27.627,
+"host"
+],
+[
+"That's what guardrails are.",
+28.177,
+29.558,
+"host"
+],
+[
+"Rules enforced by your code, outside the model.",
+29.858,
+32.541,
+"host"
+],
+[
+"Three basics.",
+33.091,
+34.015,
+"host"
+],
+[
+"One: least access \u2014 give each agent only the tools it needs.",
+34.315,
+37.593,
+"host"
+],
+[
+"Two: human approval for anything risky \u2014 money, deleting, sending.",
+37.893,
+41.549,
+"host"
+],
+[
+"Three: monitors the agent can't touch \u2014 logs and alarms it has no permission to turn off.",
+41.849,
+46.872,
+"host"
+],
+[
+"Remember: never let the agent hold the keys to its own alarms.",
+47.422,
+50.733,
+"host"
+],
+[
+"Tomorrow\u2026 one sentence on a website can hack an AI.",
+51.283,
+54.27,
+"host"
+],
+[
+"This is Agent School.",
+54.82,
+56.012,
+"host"
+],
+[
+"Lesson twenty-one drops tomorrow \u2014 subscribe so you don't fall behind!",
+56.312,
+60.297,
+"host"
+]
+]

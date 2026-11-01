@@ -1,0 +1,104 @@
+[
+[
+"AI turns every sentence\u2026 into coordinates.",
+0.08,
+2.732,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson ten.",
+3.032,
+5.204,
+"host"
+],
+[
+"Yesterday: RAG finds the right page in your files.",
+5.754,
+8.838,
+"host"
+],
+[
+"Today: how it finds it.",
+9.138,
+10.401,
+"host"
+],
+[
+"An embedding turns text into a long list of numbers \u2014 a point on a giant map of meaning.",
+10.951,
+15.888,
+"host"
+],
+[
+"On this map, \"puppy\" lands near \"dog.\" \"Refund policy\" lands near \"how do I get my money back\" \u2014 even though they share almost no words.",
+16.438,
+24.049,
+"host"
+],
+[
+"That's the magic.",
+24.599,
+25.532,
+"host"
+],
+[
+"Search by meaning, not by matching words.",
+25.832,
+28.118,
+"host"
+],
+[
+"So RAG turns your question into a point, finds the closest points in your documents, and hands those chunks to the AI.",
+28.668,
+35.649,
+"host"
+],
+[
+"These maps have hundreds or thousands of dimensions.",
+36.199,
+38.868,
+"host"
+],
+[
+"We can't picture them \u2014 but the math of distance still works.",
+39.168,
+42.226,
+"host"
+],
+[
+"Remember: embeddings put meaning on a map.",
+42.776,
+44.927,
+"host"
+],
+[
+"Close points, similar meaning.",
+45.227,
+46.773,
+"host"
+],
+[
+"Tomorrow\u2026 AI doesn't see your photo.",
+47.323,
+49.383,
+"host"
+],
+[
+"It reads it.",
+49.683,
+50.502,
+"host"
+],
+[
+"This is Agent School.",
+51.052,
+52.244,
+"host"
+],
+[
+"Lesson eleven drops tomorrow \u2014 subscribe so you don't fall behind!",
+52.544,
+56.355,
+"host"
+]
+]

@@ -1,0 +1,110 @@
+[
+[
+"What does one AI question actually cost?",
+0.08,
+2.413,
+"host"
+],
+[
+"Welcome to Agent School \u2014 lesson twenty-three.",
+2.713,
+5.247,
+"host"
+],
+[
+"Apps like ChatGPT are the shop window.",
+5.797,
+8.257,
+"host"
+],
+[
+"Builders use the API \u2014 the back door your code talks to.",
+8.557,
+11.875,
+"host"
+],
+[
+"An API call is a small message: which model, a system prompt, your question.",
+12.425,
+16.955,
+"host"
+],
+[
+"A few lines of code \u2014 and the answer comes back as text.",
+17.255,
+20.364,
+"host"
+],
+[
+"And you pay per token.",
+20.914,
+22.165,
+"host"
+],
+[
+"Tokens in \u2014 your prompt.",
+22.465,
+23.761,
+"host"
+],
+[
+"Tokens out \u2014 the reply.",
+24.061,
+25.444,
+"host"
+],
+[
+"Output tokens usually cost more.",
+25.744,
+27.755,
+"host"
+],
+[
+"A short question to a small model often costs less than a tenth of a cent.",
+28.305,
+32.481,
+"host"
+],
+[
+"But a big model, a long document, and an agent that calls it a hundred times\u2026 that adds up fast.",
+32.781,
+38.306,
+"host"
+],
+[
+"So every builder learns to read the bill: tokens in, tokens out, times price, times calls.",
+38.856,
+43.916,
+"host"
+],
+[
+"Remember: cost equals tokens times price times how many calls.",
+44.466,
+48.043,
+"host"
+],
+[
+"Tomorrow\u2026 build from scratch or use a framework?",
+48.593,
+50.994,
+"host"
+],
+[
+"Here's how to decide.",
+51.294,
+52.519,
+"host"
+],
+[
+"This is Agent School.",
+53.069,
+54.261,
+"host"
+],
+[
+"Lesson twenty-four drops tomorrow \u2014 subscribe so you don't fall behind!",
+54.561,
+58.589,
+"host"
+]
+]
