@@ -102,7 +102,7 @@ const cuff = (ex: number, ey: number, wx: number, wy: number, r: number) => {
   const a = [wx - ux * 16, wy - uy * 16], b = [wx - ux * 2, wy - uy * 2];
   return smooth([[a[0] + nx * r, a[1] + ny * r], [b[0] + nx * (r + 1), b[1] + ny * (r + 1)], [b[0] - nx * (r + 1), b[1] - ny * (r + 1)], [a[0] - nx * r, a[1] - ny * r]], 0.15);
 };
-const BKX = 176, BKY = 470; // book-hand wrist
+const BKX = 112, BKY = 498; // book-hand wrist (arm relaxed at his side)
 /** Cartoon fist: local +x = forearm direction; fingers curl on +y, thumb on top (-y). */
 const Fist: React.FC<{ x: number; y: number; ang: number }> = ({ x, y, ang }) => (
   <g transform={`translate(${x} ${y}) rotate(${ang})`}>
@@ -119,6 +119,7 @@ const FACE = "M122 168 Q120 96 200 92 Q280 96 278 168 Q280 232 246 262 Q200 290 
 
 export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
   const { talk = 0, blink = 0, brow = 0, headTilt = 0, point = 0, pointWiggle = 0, bob = 0, smile = 0.8, lookX = 0, hair = "sidepart" } = pose;
+  const bookSwing = Math.sin(bob * 0.8) * 1.5;
   const rad = (a: number) => (a * Math.PI) / 180;
   // pointing arm (viewer right): shoulder -> elbow -> wrist
   const sx = 262, sy = 322;
@@ -158,19 +159,26 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
       <path d="M200 304 L191 320 L196 358 L200 368 L204 358 L209 320 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
       <path d="M191 298 L200 312 L209 298 L205 291 L195 291 Z" fill={TC.tie} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
       <path d="M174 284 L198 304 L182 318 Z M226 284 L202 304 L218 318 Z" fill={TC.white} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-      {/* ---------- book against the chest ---------- */}
-      <g transform="rotate(-10 168 440)">
-        <rect x={120} y={382} width={94} height={120} rx={8} fill={TC.book} {...O} />
-        <rect x={120} y={382} width={20} height={120} rx={6} fill={TC.bookSh} {...O} />
-        <rect x={210} y={388} width={8} height={108} rx={3} fill="#F4F1E8" stroke={TC.out} strokeWidth={2.5} />
-        <path d="M152 412 H198 M152 430 H186" stroke="#CFE3FF" strokeWidth={6} strokeLinecap="round" />
-        <circle cx={176} cy={466} r={13} fill="none" stroke="#CFE3FF" strokeWidth={5} />
+      {/* ---------- book arm: relaxed at his side, carrying the book by its top edge ---------- */}
+      <path d={armPath(134, 324, 116, 420, BKX, BKY)} fill={TC.shirt} {...O} />
+      <path d={cuff(116, 420, BKX, BKY, 16)} fill={TC.shirtSh} {...O} strokeWidth={3} />
+      <path d="M118 352 q-6 14 -4 26 M110 424 q8 6 16 4" stroke={TC.shirtSh} strokeWidth={3} fill="none" strokeLinecap="round" />
+      {/* the book hangs from his hand, cover facing us, slightly swinging */}
+      <g transform={`rotate(${4 + bookSwing} ${BKX} ${BKY + 14})`}>
+        <rect x={BKX - 48} y={BKY + 4} width={96} height={128} rx={8} fill={TC.book} {...O} />
+        <rect x={BKX - 48} y={BKY + 4} width={20} height={128} rx={6} fill={TC.bookSh} {...O} />
+        <rect x={BKX + 44} y={BKY + 10} width={7} height={116} rx={3} fill="#F4F1E8" stroke={TC.out} strokeWidth={2.5} />
+        <path d={`M${BKX - 16} ${BKY + 44} H${BKX + 30} M${BKX - 16} ${BKY + 62} H${BKX + 18}`} stroke="#CFE3FF" strokeWidth={6} strokeLinecap="round" />
+        <circle cx={BKX + 8} cy={BKY + 98} r={13} fill="none" stroke="#CFE3FF" strokeWidth={5} />
       </g>
-      {/* ---------- book arm: full sleeve hugging the book, fist gripping its right edge ---------- */}
-      <path d={armPath(136, 324, 110, 428, BKX, BKY)} fill={TC.shirt} {...O} />
-      <path d={cuff(110, 428, BKX, BKY, 17)} fill={TC.shirtSh} {...O} strokeWidth={3} />
-      <path d="M118 360 q-6 14 -4 26 M112 440 q10 6 20 4" stroke={TC.shirtSh} strokeWidth={3} fill="none" strokeLinecap="round" />
-      <Fist x={BKX + 10} y={BKY + 2} ang={(Math.atan2(BKY - 428, BKX - 110) * 180) / Math.PI} />
+      {/* hand: fingers in front of the cover, thumb behind */}
+      <g transform={`translate(${BKX} ${BKY + 8})`}>
+        <path d={smooth([[-16, -18], [14, -18], [18, -4], [12, 6], [-12, 6], [-18, -4]], 0.45)} fill={TC.skin} {...O} />
+        {[-12, -4, 4, 12].map((fx, i) => (
+          <path key={i} d={smooth([[fx - 4.5, -2], [fx + 4.5, -2], [fx + 4.8, 14 + (i === 1 || i === 2 ? 3 : 0)], [fx, 19 + (i === 1 || i === 2 ? 3 : 0)], [fx - 4.8, 14 + (i === 1 || i === 2 ? 3 : 0)]], 0.5)} fill={TC.skin} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+        ))}
+        {[-12, -4, 4, 12].map((fx, i) => <path key={`k${i}`} d={`M${fx - 2.5} 8 q2.5 2 5 0`} stroke={TC.skinSh} strokeWidth={2} fill="none" strokeLinecap="round" />)}
+      </g>
 
       {/* ---------- pointing arm ---------- */}
       <path d={armPath(sx, sy, elx, ely, hx, hy)} fill={TC.shirt} {...O} />
