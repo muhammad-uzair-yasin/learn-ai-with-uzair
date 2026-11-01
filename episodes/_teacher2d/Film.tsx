@@ -1,27 +1,17 @@
 // projects/t2d/
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { Teacher2D, TeacherPose, HairStyle } from "./Teacher2D";
-const HAIRS: HairStyle[] = ["quiff", "sidepart", "wavy", "curly", "spiky"];
+import { Teacher2D } from "./Teacher2D";
 export const T2: React.FC = () => (
   <AbsoluteFill style={{ background: "#F3EEE4" }}>
     <svg width={1080} height={1920} viewBox="0 0 1080 1920">
-      <rect x={10} y={10} width={1060} height={1000} rx={24} fill="#fff" />
-      <g transform="translate(20 70) scale(1.1)"><Teacher2D pose={{ point: 1, talk: 0.4, smile: 0.9 }} /></g>
-      <g transform="translate(530 70) scale(1.1)"><Teacher2D pose={{ point: 0.2, smile: 1 }} /></g>
-      <text x={540} y={1050} textAnchor="middle" fontFamily="sans-serif" fontWeight={700} fontSize={34} fill="#2A1E18">Hair options — pick one</text>
-      {HAIRS.map((h, i) => {
-        const x = 18 + i * 210, y = 1090;
-        return (
-          <g key={h}>
-            <defs><clipPath id={`hc${i}`}><rect x={x} y={y} width={196} height={260} rx={18} /></clipPath></defs>
-            <rect x={x} y={y} width={196} height={260} rx={18} fill="#fff" />
-            <g clipPath={`url(#hc${i})`}><g transform={`translate(${x - 52} ${y + 6}) scale(0.75)`}><Teacher2D pose={{ point: 0, smile: 0.9, hair: h }} /></g></g>
-            <text x={x + 98} y={y + 300} textAnchor="middle" fontFamily="sans-serif" fontWeight={800} fontSize={30} fill="#2A1E18">{i + 1}</text>
-            <text x={x + 98} y={y + 336} textAnchor="middle" fontFamily="sans-serif" fontSize={22} fill="#555">{h}</text>
-          </g>
-        );
-      })}
+      <g transform="translate(560 300)">
+        <rect x={0} y={0} width={500} height={340} rx={14} fill="#B98A55" stroke="#2B1D16" strokeWidth={5} />
+        <rect x={18} y={18} width={464} height={304} rx={8} fill="#2E4B40" />
+        <text x={250} y={160} textAnchor="middle" fontFamily="sans-serif" fontWeight={800} fontSize={46} fill="#EAF2EA">AI PREDICTS</text>
+        <text x={250} y={222} textAnchor="middle" fontFamily="sans-serif" fontSize={30} fill="#CFE3D4">the next word…</text>
+      </g>
+      <g transform="translate(100 520) scale(1.6)"><Teacher2D pose={{ point: 1, talk: 0.4, brow: 0.4, smile: 0.9 }} /></g>
     </svg>
   </AbsoluteFill>
 );
