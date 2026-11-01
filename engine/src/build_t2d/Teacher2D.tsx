@@ -10,6 +10,7 @@ export const TC = {
   stick: "#8A5A2E", tie: "#C0392B",
 };
 const SW = 4; // outline width
+const FACE = "M120 160 Q118 92 200 88 Q282 92 280 160 Q282 236 246 268 Q200 296 154 268 Q118 236 120 160 Z";
 
 export type TeacherPose = {
   talk?: number;      // 0..1 mouth open
@@ -98,55 +99,76 @@ export const Teacher2D: React.FC<{ pose?: TeacherPose }> = ({ pose = {} }) => {
       <Hand x={hx} y={hy} r={18} />
       {/* neck */}
       <path d="M178 250 L178 292 Q200 304 222 292 L222 250 Z" fill={TC.skinSh} stroke={TC.out} strokeWidth={SW} />
-      {/* ===== head ===== */}
-      <g transform={`rotate(${headTilt} 200 260)`}>
+      {/* ===== head (v2: rounder face, big expressive eyes, neat short beard, swept wavy hair) ===== */}
+      <g transform={`rotate(${headTilt} 200 270)`}>
+        <defs>
+          <clipPath id="faceClip"><path d={FACE} /></clipPath>
+          <radialGradient id="cheekG" cx="50%" cy="50%" r="50%"><stop offset="0" stopColor="#F08C6E" stopOpacity={0.55} /><stop offset="1" stopColor="#F08C6E" stopOpacity={0} /></radialGradient>
+        </defs>
+        {/* back hair mass behind the head */}
+        <path d="M112 150 Q100 70 160 44 Q200 30 240 44 Q300 70 288 150 Z" fill={TC.hair} stroke={TC.out} strokeWidth={SW} />
         {/* ears */}
-        <ellipse cx={104} cy={178} rx={20} ry={27} fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
-        <ellipse cx={296} cy={178} rx={20} ry={27} fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
-        <path d="M100 168 q8 8 2 20 M300 168 q-8 8 -2 20" stroke={TC.skinSh} strokeWidth={4} fill="none" strokeLinecap="round" />
+        <g>
+          <ellipse cx={113} cy={186} rx={15} ry={21} fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
+          <ellipse cx={287} cy={186} rx={15} ry={21} fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
+          <path d="M110 178 q7 6 1 16 M290 178 q-7 6 -1 16" stroke={TC.skinSh} strokeWidth={4} fill="none" strokeLinecap="round" />
+        </g>
         {/* face */}
-        <path d="M110 150 Q108 70 200 66 Q292 70 290 150 Q292 230 246 262 Q200 286 154 262 Q108 230 110 150 Z" fill={TC.skin} stroke={TC.out} strokeWidth={SW} />
-        {/* beard (jaw + chin) */}
-        <path d="M114 186 Q118 240 158 266 Q200 290 242 266 Q282 240 286 186 Q280 222 258 230 Q240 224 228 236 Q200 246 172 236 Q160 224 142 230 Q120 222 114 186 Z" fill={TC.beard} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+        <path d={FACE} fill={TC.skin} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
+        <g clipPath="url(#faceClip)">
+          <path d="M250 90 Q300 170 262 262 Q300 260 320 160 Z" fill={TC.skinSh} opacity={0.45} />
+          <ellipse cx={200} cy={110} rx={70} ry={20} fill="#FFFFFF" opacity={0.08} />
+        </g>
+        {/* neat short beard: jaw band + chin, sideburns into the hair */}
+        <path d="M120 172 Q120 228 148 258 Q172 284 200 286 Q228 284 252 258 Q280 228 280 172 L268 172 Q268 214 250 236 Q238 226 224 232 Q212 240 200 240 Q188 240 176 232 Q162 226 150 236 Q132 214 132 172 Z"
+          fill={TC.beard} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+        <path d="M150 262 Q200 292 250 262" stroke="#5A4232" strokeWidth={3} fill="none" opacity={0.6} />
+        {/* cheeks */}
+        <ellipse cx={146} cy={208} rx={18} ry={11} fill="url(#cheekG)" />
+        <ellipse cx={254} cy={208} rx={18} ry={11} fill="url(#cheekG)" />
         {/* mouth */}
-        <g transform="translate(200 244)">
+        <g transform="translate(200 250)">
           {talk > 0.06 ? (
             <g>
-              <path d={`M-24 -2 Q0 ${-4 + smile * 2} 24 -2 Q22 ${mouthH} 0 ${mouthH + 4} Q-22 ${mouthH} -24 -2 Z`} fill={TC.mouth} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
-              <path d={`M-18 0 Q0 -2 18 0 L16 6 Q0 8 -16 6 Z`} fill={TC.teeth} />
-              {mouthH > 12 && <ellipse cx={0} cy={mouthH - 2} rx={11} ry={Math.min(6, mouthH / 4)} fill={TC.tongue} />}
+              <path d={`M-21 -4 Q0 -1 21 -4 Q19 ${mouthH} 0 ${mouthH + 3} Q-19 ${mouthH} -21 -4 Z`} fill={TC.mouth} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+              <path d="M-16 -2 Q0 0 16 -2 L14 4 Q0 6 -14 4 Z" fill={TC.teeth} />
+              {mouthH > 12 && <ellipse cx={0} cy={mouthH - 2} rx={10} ry={Math.min(5, mouthH / 4)} fill={TC.tongue} />}
             </g>
           ) : (
-            <path d={`M-22 -4 Q0 ${8 + smile * 10} 22 -4`} stroke={TC.out} strokeWidth={4} fill={smile > 0.5 ? TC.mouth : "none"} strokeLinecap="round" />
+            <g>
+              <path d={`M-20 -4 Q0 ${10 + smile * 6} 20 -4 Z`} fill={TC.mouth} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+              <path d="M-15 -3 Q0 1 15 -3 L13 1 Q0 4 -13 1 Z" fill={TC.teeth} />
+            </g>
           )}
         </g>
         {/* moustache */}
-        <path d="M170 232 Q185 220 200 228 Q215 220 230 232 Q215 238 200 234 Q185 238 170 232 Z" fill={TC.beard} stroke={TC.out} strokeWidth={3} strokeLinejoin="round" />
+        <path d="M172 240 Q186 228 200 236 Q214 228 228 240 Q214 244 200 241 Q186 244 172 240 Z" fill={TC.beard} stroke={TC.out} strokeWidth={2.5} strokeLinejoin="round" />
         {/* nose */}
-        <path d="M196 170 Q186 202 192 208 Q200 214 210 208" stroke={TC.skinSh} strokeWidth={5} fill="none" strokeLinecap="round" />
-        {/* cheeks */}
-        <ellipse cx={140} cy={204} rx={14} ry={8} fill="#E88B6A" opacity={0.35} />
-        <ellipse cx={260} cy={204} rx={14} ry={8} fill="#E88B6A" opacity={0.35} />
+        <path d="M200 192 Q192 210 196 216 Q202 222 212 214" stroke={TC.skinSh} strokeWidth={5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx={204} cy={206} r={3} fill="#FFFFFF" opacity={0.35} />
         {/* eyes */}
-        {[156, 244].map((x, i) => (
+        {[162, 238].map((x, i) => (
           <g key={i}>
-            <g transform={`translate(${x} 166) scale(1 ${blinkK})`}>
-              <ellipse rx={23} ry={25} fill={TC.white} stroke={TC.out} strokeWidth={SW} />
-              <circle cx={lookX * 6} cy={3} r={13} fill={TC.iris} />
-              <circle cx={lookX * 6} cy={3} r={7} fill="#140C08" />
-              <circle cx={lookX * 6 + 5} cy={-3} r={4.5} fill={TC.white} />
+            <g transform={`translate(${x} 176) scale(1 ${blinkK})`}>
+              <ellipse rx={20} ry={24} fill={TC.white} stroke={TC.out} strokeWidth={3} />
+              <circle cx={lookX * 5} cy={4} r={14} fill={TC.iris} />
+              <circle cx={lookX * 5} cy={4} r={14} fill="none" stroke="#3A2010" strokeWidth={2} />
+              <circle cx={lookX * 5} cy={5} r={7.5} fill="#120A06" />
+              <circle cx={lookX * 5 + 5} cy={-2} r={4.5} fill={TC.white} />
+              <circle cx={lookX * 5 - 4} cy={10} r={2} fill={TC.white} opacity={0.8} />
             </g>
-            {blink > 0.6 && <path d={`M${x - 22} 168 Q${x} 176 ${x + 22} 168`} stroke={TC.out} strokeWidth={4} fill="none" strokeLinecap="round" />}
+            {/* upper lash line */}
+            <path d={`M${x - 21} ${170 - 18 * blinkK + 4} Q${x} ${170 - 30 * blinkK + 4} ${x + 21} ${170 - 18 * blinkK + 4}`} stroke={TC.out} strokeWidth={5} fill="none" strokeLinecap="round" />
+            {blink > 0.6 && <path d={`M${x - 20} 178 Q${x} 186 ${x + 20} 178`} stroke={TC.out} strokeWidth={4} fill="none" strokeLinecap="round" />}
           </g>
         ))}
-        {/* eyebrows */}
-        <path d={`M128 ${132 + by} Q154 ${116 + by} 180 ${128 + by}`} stroke={TC.hair} strokeWidth={11} fill="none" strokeLinecap="round" />
-        <path d={`M220 ${128 + by} Q246 ${116 + by} 272 ${132 + by}`} stroke={TC.hair} strokeWidth={11} fill="none" strokeLinecap="round" />
-        {/* hair: wavy volume */}
-        <path d="M104 160 Q92 112 112 82 Q118 40 160 34 Q178 10 214 22 Q248 12 270 36 Q306 52 300 96 Q312 130 296 162 Q292 128 276 112 Q262 96 240 100 Q224 84 204 96 Q186 82 166 98 Q140 92 126 112 Q112 128 104 160 Z"
+        {/* eyebrows: thick tapered */}
+        <path d={`M136 ${140 + by} Q160 ${122 + by} 186 ${134 + by} Q160 ${130 + by} 138 ${146 + by} Z`} fill={TC.hair} stroke={TC.hair} strokeWidth={5} strokeLinejoin="round" />
+        <path d={`M264 ${140 + by} Q240 ${122 + by} 214 ${134 + by} Q240 ${130 + by} 262 ${146 + by} Z`} fill={TC.hair} stroke={TC.hair} strokeWidth={5} strokeLinejoin="round" />
+        {/* hair: voluminous wavy top swept up and back (like Uzair) */}
+        <path d="M118 160 Q110 120 124 98 Q122 62 156 50 Q170 22 206 28 Q238 16 262 38 Q296 46 292 86 Q304 112 284 160 Q282 128 268 116 Q262 100 244 104 Q236 90 218 98 Q206 86 190 98 Q172 90 160 104 Q140 104 132 120 Q120 132 118 160 Z"
           fill={TC.hair} stroke={TC.out} strokeWidth={SW} strokeLinejoin="round" />
-        <path d="M140 60 Q160 46 184 52 M210 40 Q236 34 256 50 M270 70 Q284 80 284 98" stroke={TC.hairHi} strokeWidth={6} fill="none" strokeLinecap="round" />
-        <path d="M150 90 Q166 70 190 80 M208 72 Q228 62 248 76" stroke={TC.hairHi} strokeWidth={5} fill="none" strokeLinecap="round" />
+        <path d="M146 72 Q164 56 186 62 M204 46 Q228 38 248 52 M262 66 Q278 76 280 94 M160 92 Q176 78 196 86 M212 80 Q232 72 250 86" stroke={TC.hairHi} strokeWidth={5} fill="none" strokeLinecap="round" />
       </g>
     </g>
   );
