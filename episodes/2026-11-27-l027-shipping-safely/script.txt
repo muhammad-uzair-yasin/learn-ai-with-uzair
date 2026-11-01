@@ -1,0 +1,10 @@
+The four things every production agent needs. Welcome to Agent School — lesson twenty-seven.
+A demo can be messy. A real product can't. Here's the checklist.
+One: guardrails. Least access, and human approval for risky actions.
+Two: evals. A test set you run before every change.
+Three: limits. Step limits, budgets, timeouts — so nothing runs away.
+Four: observability. Logs of every thought, tool call, and result — so when something goes wrong, you can see exactly why.
+Miss one, and you'll find out the hard way. Have all four, and you can fix anything fast.
+Remember: guardrails, evals, limits, logs.
+Tomorrow… an entire AI agent in one picture.
+This is Agent School. Lesson twenty-eight drops tomorrow — subscribe so you don't fall behind!

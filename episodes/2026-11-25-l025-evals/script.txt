@@ -1,0 +1,9 @@
+Your agent passed your test… and failed a hundred users. Welcome to Agent School — lesson twenty-five.
+You tried it three times. It worked. You shipped it. Then real people arrived.
+Real users ask in ways you never imagined. Typos, slang, weird edge cases. And AI is random — it can pass once and fail the next time.
+That's why builders use evals: a test set of real examples, each with what a good answer looks like. Fifty, a hundred, more.
+Every time you change the prompt or the model, run all of them — and get a score. Did it get better… or worse?
+And every failure a user reports becomes a new test. Your eval set grows smarter every week.
+Remember: one good demo proves nothing. A test set with a score proves progress.
+Tomorrow… an agent loop can empty your wallet overnight.
+This is Agent School. Lesson twenty-six drops tomorrow — subscribe so you don't fall behind!

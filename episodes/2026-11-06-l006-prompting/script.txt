@@ -1,0 +1,10 @@
+Same AI. Ten times better answers. Welcome to Agent School — lesson six.
+Yesterday: AI makes things up when it's missing information. Today: give it the information.
+"Write a post about coffee." You'll get something… generic.
+Now try four ingredients. Role: you're a barista with twenty years of experience. Context: it's for my café's Instagram. Task: one post about our new cold brew. Format: under fifty words, one emoji, end with a question.
+Same model — completely different answer.
+And one bonus trick: show an example of what good looks like. AI copies patterns better than it follows descriptions.
+A vague prompt makes the model guess. A clear prompt removes the guessing.
+Remember: role, context, task, format. Then show an example.
+Tomorrow… the secret message that comes before everything you type.
+This is Agent School. Lesson seven drops tomorrow — subscribe so you don't fall behind!

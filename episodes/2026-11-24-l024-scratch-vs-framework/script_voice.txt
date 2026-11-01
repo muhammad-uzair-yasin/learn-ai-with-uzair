@@ -1,0 +1,9 @@
+[confident, intriguing] Build your agent from scratch… or use a framework? [warm] Welcome to Agent School — lesson twenty-four.
+[friendly] By now you know an agent is a loop, tools, and a model. That's surprisingly little code.
+[explaining] From scratch: a few dozen lines. You see every step, you control everything, and nothing is hidden. Perfect for learning — and for simple agents.
+[explaining] Frameworks give you ready-made pieces: memory, multi-agent teams, tracing, retries. Faster for big systems.
+[half-laughing] But they also hide things. [chuckles] And when something breaks inside a framework you don't understand… good luck.
+[building energy] So here's the rule. Build your first agent from scratch, to learn the loop. Reach for a framework when you need what it gives you — not before.
+[slow, memorable] Remember: learn the loop by hand. Then let a framework save you time.
+[teasing] Tomorrow… your agent passed your test — and failed a hundred users.
+[energetic, warm] This is Agent School. Lesson twenty-five drops tomorrow — [playful urgency] subscribe so you don't fall behind!

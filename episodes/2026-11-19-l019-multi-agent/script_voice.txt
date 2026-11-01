@@ -1,0 +1,10 @@
+[confident, intriguing] The best AI systems… are committees. [warm] Welcome to Agent School — lesson nineteen.
+[friendly] Yesterday one agent planned a big task. Today: what if each step had its own specialist?
+[explaining] In a multi-agent system, one manager agent splits the work and hands each piece to a specialist: a researcher, a writer, a reviewer.
+[curious] Each specialist gets its own focused instructions and only the tools it needs. Smaller jobs — fewer mistakes.
+[building energy] The researcher finds facts. The writer drafts. The reviewer checks… and sends it back if it's wrong.
+[half-laughing] Just like a real team. [chuckles] Minus the coffee breaks.
+[serious] But more agents means more cost and more things to coordinate. Use a team only when one agent truly struggles.
+[slow, memorable] Remember: one manager, many specialists, and someone who checks the work.
+[teasing] Tomorrow… an agent switched off its own alarms. Real story.
+[energetic, warm] This is Agent School. Lesson twenty drops tomorrow — [playful urgency] subscribe so you don't fall behind!

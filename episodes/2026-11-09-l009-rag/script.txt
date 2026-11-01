@@ -1,0 +1,10 @@
+Your AI has never read your files. Until this. Welcome to Agent School — lesson nine.
+We know AI only knows its training data, plus whatever is in its context window.
+So how does a company chatbot know your refund policy? It wasn't trained on it.
+It uses RAG: Retrieval-Augmented Generation. Three steps. One: search your documents for the parts that match the question. Two: paste those parts into the prompt. Three: the model answers using them.
+It's an open-book exam. The AI doesn't memorize your files — it looks things up, right when you ask.
+And it fights hallucination, because now the answer comes with a source you can check.
+The hard part is the search. Find the wrong page… get the wrong answer.
+Remember: RAG means look it up first, then answer.
+Tomorrow… how AI turns every sentence into coordinates. That's how the search works.
+This is Agent School. Lesson ten drops tomorrow — subscribe so you don't fall behind!

@@ -1,0 +1,10 @@
+[confident, intriguing] Nobody programmed ChatGPT's answers. [dramatic pause] Not one. [warm] Welcome back to Agent School — lesson two.
+[friendly] Yesterday we learned AI predicts the next word. Today: how it learned to predict so well.
+[explaining] Old software was rules. A programmer wrote: if this, then that. Every answer, typed by a human.
+[curious] Machine learning flips it. You don't write the rules. You show examples… and the machine finds the rules itself.
+[building energy] Here's how. Hide the next word in a sentence. The model guesses. It's wrong. [chuckles] A little math nudges it… to be less wrong next time. Then again. And again. Billions of times.
+[amazed] Those nudges tweak billions of tiny numbers called parameters. Nobody sets them by hand. They're learned.
+[serious, slower] That's why even its creators can't point to the line of code that writes an answer. There isn't one.
+[slow, memorable] Remember: programmers write rules. Machines learn them from examples.
+[teasing] Tomorrow… why AI can't even see the word "strawberry."
+[energetic, warm] This is Agent School. Lesson three drops tomorrow — [playful urgency] subscribe so you don't fall behind!

@@ -1,0 +1,10 @@
+Your agent remembers you. Selectively. Welcome to Agent School — lesson seventeen.
+We know the context window is short-term memory — and it gets wiped. So how do agents remember you next week?
+Long-term memory lives outside the model, in a database. Your agent saves important facts: "prefers short answers," "project deadline Friday."
+Next time, it searches that memory — often with embeddings — and pulls only the relevant facts into the context window.
+It doesn't replay your whole life. It picks what matters right now.
+And deciding what to forget matters too. Old facts go stale. Private things shouldn't be saved at all.
+Good memory makes an agent feel like a teammate instead of a stranger every morning.
+Remember: short-term memory is the context window. Long-term memory is a database the agent searches.
+Tomorrow… give an agent a huge task and watch it slice it up.
+This is Agent School. Lesson eighteen drops tomorrow — subscribe so you don't fall behind!

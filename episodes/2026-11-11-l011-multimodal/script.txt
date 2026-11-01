@@ -1,0 +1,10 @@
+AI doesn't see your photo. It reads it. Welcome to Agent School — lesson eleven.
+We know AI reads tokens. Here's the twist: pictures can become tokens too.
+A multimodal model chops an image into small patches. Each patch becomes a token — just like a chunk of a word.
+Then the same prediction machine reads image tokens and text tokens side by side.
+That's how you snap a fridge and ask "what can I cook?" — or show a chart and ask "what's the trend?"
+Audio works the same way. Sound becomes tokens. That's how voice assistants listen.
+But it can still misread — tiny text, crowded charts, counting objects. Double-check what matters.
+Remember: to AI, everything becomes tokens. Words, pictures, sound.
+Tomorrow… stop fine-tuning. Here's what to do instead.
+This is Agent School. Lesson twelve drops tomorrow — subscribe so you don't fall behind!

@@ -1,0 +1,9 @@
+An entire AI agent… in one picture. Welcome to Agent School — lesson twenty-eight.
+Everything you learned this month fits together. Let's draw it.
+In the middle: the model — the brain that predicts. Around it: the system prompt, its job description.
+The loop: think, act, observe, repeat. Plugged into it: tools, often through MCP. Next to it: memory — short-term context, long-term database. And RAG, to look up your knowledge.
+Wrapped around everything: guardrails, step limits, budgets. And underneath: logs and evals, watching every move.
+That's it. That's an agent. Every one you'll ever build is a version of this picture.
+Remember: model, prompt, loop, tools, memory, knowledge — all inside guardrails.
+Tomorrow… we stop drawing. We build a real agent. Right now.
+This is Agent School. Lesson twenty-nine drops tomorrow — subscribe so you don't fall behind!

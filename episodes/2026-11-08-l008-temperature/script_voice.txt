@@ -1,0 +1,10 @@
+[confident, intriguing] Ask AI the same question twice… get two different answers. [warm] Welcome to Agent School — lesson eight.
+[friendly] Remember: AI picks the next word from a list of probabilities.
+[explaining] But it doesn't always pick the top word. It rolls weighted dice. And a setting called temperature controls how wild those dice are.
+[matter-of-fact] Low temperature: it almost always takes the safest word. Focused. Repeatable.
+[excited] High temperature: it takes risks. Surprising words, creative ideas… [chuckles] and sometimes nonsense.
+[building energy] So: facts, code, data extraction — keep it low. Brainstorming, stories, slogans — turn it up.
+[serious] Not every app lets you change it, but behind the scenes this dial is always there.
+[slow, memorable] Remember: low temperature for accuracy. High temperature for creativity.
+[teasing] Tomorrow… your AI has never read your files. Until this.
+[energetic, warm] This is Agent School. Lesson nine drops tomorrow — [playful urgency] subscribe so you don't fall behind!

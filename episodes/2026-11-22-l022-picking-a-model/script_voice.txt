@@ -1,0 +1,9 @@
+[confident, intriguing] The best AI model… is usually the cheaper one. [warm] Welcome to Agent School — lesson twenty-two.
+[friendly] Everyone wants the biggest, smartest model. [chuckles] Your wallet disagrees.
+[explaining] Big models: best at hard reasoning, slower, much more expensive. Small models: fast, cheap — and great at simple, clear tasks.
+[curious] Sorting emails? Extracting a name from a form? A small model does it perfectly, for a fraction of the price.
+[building energy] So builders route the work: small model for the easy ninety percent, big model only when the task is truly hard.
+[explaining] How to pick: write ten real examples of your task. Try the cheapest model first. Move up only if it fails.
+[slow, memorable] Remember: start small. Upgrade only when the task proves it needs more.
+[teasing] Tomorrow… what one AI question actually costs. We'll make our first API call.
+[energetic, warm] This is Agent School. Lesson twenty-three drops tomorrow — [playful urgency] subscribe so you don't fall behind!

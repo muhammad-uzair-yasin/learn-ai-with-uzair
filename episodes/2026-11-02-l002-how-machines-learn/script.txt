@@ -1,0 +1,10 @@
+Nobody programmed ChatGPT's answers. Not one. Welcome back to Agent School — lesson two.
+Yesterday we learned AI predicts the next word. Today: how it learned to predict so well.
+Old software was rules. A programmer wrote: if this, then that. Every answer, typed by a human.
+Machine learning flips it. You don't write the rules. You show examples… and the machine finds the rules itself.
+Here's how. Hide the next word in a sentence. The model guesses. It's wrong. A little math nudges it… to be less wrong next time. Then again. And again. Billions of times.
+Those nudges tweak billions of tiny numbers called parameters. Nobody sets them by hand. They're learned.
+That's why even its creators can't point to the line of code that writes an answer. There isn't one.
+Remember: programmers write rules. Machines learn them from examples.
+Tomorrow… why AI can't even see the word "strawberry."
+This is Agent School. Lesson three drops tomorrow — subscribe so you don't fall behind!

@@ -1,0 +1,10 @@
+[excited] Let's build a real AI agent. [dramatic pause] Right now. [warm] Welcome to Agent School — lesson twenty-nine.
+[friendly] Our agent's job: answer questions about the weather and do the math. Two tools.
+[explaining] Step one: the tools. A function called get_weather. A function called calculate. Each with a short description the model can read.
+[explaining] Step two: the system prompt. "You are a helpful assistant. Use tools when you need facts or math."
+[building energy] Step three: the loop. Send the conversation and the tool list to the model. If it asks for a tool — run it, add the result, and loop again. If it answers — we're done.
+[serious] Step four: a stop rule. Maximum five steps.
+[amazed] That's the whole agent. Around thirty lines of code. No framework.
+[slow, memorable] Remember: tools, prompt, loop, limit. That's an agent you can build tonight.
+[teasing] Tomorrow… we run it live, add a guardrail, and finish month one.
+[energetic, warm] This is Agent School. The final lesson of month one drops tomorrow — [playful urgency] subscribe so you don't miss it!

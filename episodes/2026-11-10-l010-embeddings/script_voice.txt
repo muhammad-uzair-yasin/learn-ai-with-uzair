@@ -1,0 +1,10 @@
+[confident, intriguing] AI turns every sentence… into coordinates. [warm] Welcome to Agent School — lesson ten.
+[friendly] Yesterday: RAG finds the right page in your files. Today: how it finds it.
+[explaining] An embedding turns text into a long list of numbers — a point on a giant map of meaning.
+[curious] On this map, "puppy" lands near "dog." "Refund policy" lands near "how do I get my money back" — even though they share almost no words.
+[amazed] That's the magic. Search by meaning, not by matching words.
+[building energy] So RAG turns your question into a point, finds the closest points in your documents, and hands those chunks to the AI.
+[matter-of-fact] These maps have hundreds or thousands of dimensions. We can't picture them — but the math of distance still works.
+[slow, memorable] Remember: embeddings put meaning on a map. Close points, similar meaning.
+[teasing] Tomorrow… AI doesn't see your photo. It reads it.
+[energetic, warm] This is Agent School. Lesson eleven drops tomorrow — [playful urgency] subscribe so you don't fall behind!

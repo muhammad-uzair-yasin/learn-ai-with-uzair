@@ -1,0 +1,10 @@
+This is the USB-C of AI. Welcome to Agent School — lesson sixteen.
+Yesterday: tools let AI act. Today's problem: every app needed its own custom tool code.
+MCP — the Model Context Protocol — fixes that. Anthropic released it as an open standard in late 2024.
+Remember drawers full of different chargers? USB-C made one plug fit everything. MCP does that for AI tools.
+Build an MCP server once — for your calendar, your database, your files — and any AI app that speaks MCP can plug into it.
+And it spread fast. OpenAI, Google and many others added support.
+A plug that fits everything also needs care: only connect servers you trust, and give them the least access they need.
+Remember: build the tool once. Plug it into any AI. That's MCP.
+Tomorrow… your agent remembers you. Selectively.
+This is Agent School. Lesson seventeen drops tomorrow — subscribe so you don't fall behind!

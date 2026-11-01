@@ -1,0 +1,10 @@
+There's a secret message… before everything you type. Welcome to Agent School — lesson seven.
+Yesterday you learned to write great prompts. Today: the prompt you never see.
+Every AI app sends a hidden first message called the system prompt. It tells the model who to be and what rules to follow — before you say a word.
+"You are a helpful support agent for this company. Be polite. Never discuss pricing."
+Same model, different system prompt… and you get a tutor, a lawyer-style assistant, or a pirate. Arr.
+For builders, this is where you put the personality, the rules, and the boundaries of your agent.
+But it's guidance, not a lock. Clever users can try to talk around it. We'll fight that in lesson twenty-one.
+Remember: the system prompt is the job description you give your AI.
+Tomorrow… why asking AI the same question twice gives two different answers.
+This is Agent School. Lesson eight drops tomorrow — subscribe so you don't fall behind!

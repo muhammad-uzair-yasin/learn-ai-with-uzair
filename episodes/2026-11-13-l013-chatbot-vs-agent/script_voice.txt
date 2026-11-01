@@ -1,0 +1,10 @@
+[confident, intriguing] A chatbot answers. [dramatic pause] An agent acts. [warm] Welcome to Agent School — lesson thirteen.
+[friendly] Everything so far was about a model that talks. Now we give it a job.
+[explaining] Ask a chatbot: "find me a cheap flight to Dubai." It tells you how to search.
+[excited] Ask an agent the same thing… and it searches, compares prices, and comes back with options.
+[explaining] An agent is an AI model plus three things: tools it can use, a goal to reach, and a loop to keep going until it's done.
+[curious] The model is still the brain. It still predicts. But now its predictions decide actions: search this, open that, check again.
+[serious] More power means more risk. An agent that can act can also act wrong. That's why later lessons cover guardrails.
+[slow, memorable] Remember: chatbot equals talk. Agent equals model, tools, goal, and a loop.
+[teasing] Tomorrow… the four-step loop every AI agent runs.
+[energetic, warm] This is Agent School. Lesson fourteen drops tomorrow — [playful urgency] subscribe so you don't fall behind!

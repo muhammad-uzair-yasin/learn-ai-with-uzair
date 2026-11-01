@@ -1,0 +1,9 @@
+An agent loop can empty your wallet… overnight. Welcome to Agent School — lesson twenty-six.
+Lesson twenty-three: every call costs tokens. Now picture a loop that never stops.
+A tool keeps failing. The agent keeps retrying. Each retry sends the whole growing conversation again. Thousands of calls… while you sleep.
+Four guards. One: a maximum number of steps per task. Two: a budget limit per task and per day. Three: smaller models for simple steps. Four: caching — don't pay twice for the same answer.
+And set billing alerts with your provider. If spending jumps, you hear about it before the bill arrives.
+Most surprise bills are bugs, not busy users.
+Remember: every loop needs a step limit and a budget.
+Tomorrow… the four things every production agent needs.
+This is Agent School. Lesson twenty-seven drops tomorrow — subscribe so you don't fall behind!

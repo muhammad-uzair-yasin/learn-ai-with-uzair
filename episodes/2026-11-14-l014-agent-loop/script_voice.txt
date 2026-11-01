@@ -1,0 +1,9 @@
+[confident, intriguing] Every AI agent on Earth runs the same four-step loop. [warm] Welcome to Agent School — lesson fourteen.
+[friendly] Yesterday: an agent is a model with tools, a goal, and a loop. Today: the loop.
+[explaining] Step one: think. "What's my next move?" Step two: act. Call a tool — search, calculate, send. Step three: observe. Read what came back. Step four: repeat — or stop if the goal is done.
+[building energy] Think. Act. Observe. Repeat. Over and over until the job's finished.
+[curious] Booking a flight? Think: search flights. Act: search. Observe: ten results. Think: compare prices. And around it goes.
+[serious] Every loop needs a stop rule. A maximum number of steps — or an agent can spin forever.
+[slow, memorable] Remember: think, act, observe, repeat. That's every agent.
+[teasing] Tomorrow… AI has no hands. So how did it book a flight?
+[energetic, warm] This is Agent School. Lesson fifteen drops tomorrow — [playful urgency] subscribe so you don't fall behind!

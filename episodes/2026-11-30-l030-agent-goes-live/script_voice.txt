@@ -1,0 +1,9 @@
+[excited] Our agent goes live today. [warm] Welcome to the final lesson of month one.
+[friendly] Yesterday we wrote it. Now let's run it.
+[explaining] Question: "It's thirty-one degrees in Lahore. What's that in Fahrenheit?"
+[building energy] Think: I need math. Act: calculate. Observe: eighty-seven point eight. Answer: "About eighty-eight degrees Fahrenheit." [chuckles] Two steps. Done.
+[serious] Now a guardrail. We add a rule in code: any tool that sends or deletes needs a human "yes" first. The agent can ask — but it can't act alone.
+[proud] Thirty lessons ago, AI was a mystery. Now you know how it predicts, learns, remembers, uses tools… and how to keep it safe.
+[excited] Next month is Build Month. Four real agents, built step by step.
+[slow, memorable] Remember: you don't just use AI anymore. You can build it.
+[energetic, warm] This is Agent School. Month two starts tomorrow — [playful urgency] subscribe so you don't fall behind!

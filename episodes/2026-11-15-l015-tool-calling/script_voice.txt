@@ -1,0 +1,10 @@
+[confident, intriguing] AI has no hands. [dramatic pause] So how did it book a flight? [warm] Welcome to Agent School — lesson fifteen.
+[friendly] Yesterday: think, act, observe. Today: how the "act" part actually works.
+[explaining] The model can't click anything. It can only write text. So we give it a menu of tools — each with a name and a description. "search_flights: finds flights between two cities."
+[curious] When the model wants a tool, it writes a small structured request: search_flights, from Lahore, to Dubai, on Friday.
+[building energy] Your code reads that request, runs the real function, and hands the result back. The model reads it… and decides the next step.
+[amazed] The AI writes the order. Your code does the work.
+[serious] That's also the safety point: your code decides which tools exist and what they're allowed to do.
+[slow, memorable] Remember: tool calling means the AI asks, and your code acts.
+[teasing] Tomorrow… the USB-C of AI. What is MCP?
+[energetic, warm] This is Agent School. Lesson sixteen drops tomorrow — [playful urgency] subscribe so you don't fall behind!

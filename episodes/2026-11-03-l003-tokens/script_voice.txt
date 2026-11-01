@@ -1,0 +1,10 @@
+[confident, intriguing] AI can't see the word "strawberry." [dramatic pause] Seriously. [warm] Welcome to Agent School — lesson three.
+[friendly] Yesterday: machines learn from examples. Today: what those examples actually look like to the machine.
+[explaining] AI doesn't read letters. It reads tokens — chunks of text. "Strawberry" might become "straw"… and "berry."
+[curious] Each token becomes a number. So the model sees a short list of numbers — not ten letters.
+[half-laughing] That's why some models famously miscounted the R's in strawberry. They never saw the letters!
+[matter-of-fact] In English, one token is roughly three quarters of a word. A hundred words? About a hundred and thirty tokens.
+[serious] And tokens matter for you, because AI is priced in tokens, and its memory is measured in tokens.
+[slow, memorable] Remember: AI doesn't read words. It reads tokens.
+[teasing] Tomorrow… why your AI forgets you in the middle of a conversation.
+[energetic, warm] This is Agent School. Lesson four drops tomorrow — [playful urgency] subscribe so you don't fall behind!

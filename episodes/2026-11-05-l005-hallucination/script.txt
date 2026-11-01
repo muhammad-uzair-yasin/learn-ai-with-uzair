@@ -1,0 +1,9 @@
+Why does AI lie… with a straight face? Welcome to Agent School — lesson five.
+Remember lesson one: AI predicts what's likely, not what's true. Today we see what that costs.
+In 2023, lawyers in New York filed a court brief full of cases ChatGPT had cited. The cases didn't exist. The judge fined them five thousand dollars.
+That's a hallucination: a confident answer that's made up. The model fills the gap with something that sounds right.
+Why so confident? Because sounding sure is just another pattern. Fluent text and true text look the same to a prediction machine.
+Three fixes. One: give it the real source to read. Two: ask it to quote where each fact came from. Three: let it say "I don't know."
+Remember: fluent is not the same as true.
+Tomorrow… how the same AI gives you ten times better answers.
+This is Agent School. Lesson six drops tomorrow — subscribe so you don't fall behind!

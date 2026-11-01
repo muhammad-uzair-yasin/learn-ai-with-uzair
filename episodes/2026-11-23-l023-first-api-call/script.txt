@@ -1,0 +1,9 @@
+What does one AI question actually cost? Welcome to Agent School — lesson twenty-three.
+Apps like ChatGPT are the shop window. Builders use the API — the back door your code talks to.
+An API call is a small message: which model, a system prompt, your question. A few lines of code — and the answer comes back as text.
+And you pay per token. Tokens in — your prompt. Tokens out — the reply. Output tokens usually cost more.
+A short question to a small model often costs less than a tenth of a cent. But a big model, a long document, and an agent that calls it a hundred times… that adds up fast.
+So every builder learns to read the bill: tokens in, tokens out, times price, times calls.
+Remember: cost equals tokens times price times how many calls.
+Tomorrow… build from scratch or use a framework? Here's how to decide.
+This is Agent School. Lesson twenty-four drops tomorrow — subscribe so you don't fall behind!

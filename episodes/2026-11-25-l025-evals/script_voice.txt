@@ -1,0 +1,9 @@
+[confident, intriguing] Your agent passed your test… [dramatic pause] and failed a hundred users. [warm] Welcome to Agent School — lesson twenty-five.
+[friendly] You tried it three times. It worked. You shipped it. Then real people arrived.
+[explaining] Real users ask in ways you never imagined. Typos, slang, weird edge cases. And AI is random — it can pass once and fail the next time.
+[building energy] That's why builders use evals: a test set of real examples, each with what a good answer looks like. Fifty, a hundred, more.
+[curious] Every time you change the prompt or the model, run all of them — and get a score. Did it get better… or worse?
+[serious] And every failure a user reports becomes a new test. Your eval set grows smarter every week.
+[slow, memorable] Remember: one good demo proves nothing. A test set with a score proves progress.
+[teasing] Tomorrow… an agent loop can empty your wallet overnight.
+[energetic, warm] This is Agent School. Lesson twenty-six drops tomorrow — [playful urgency] subscribe so you don't fall behind!

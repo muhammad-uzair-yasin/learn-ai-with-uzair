@@ -1,0 +1,10 @@
+[confident, intriguing] Your AI forgets you… in the middle of a conversation. [warm] Welcome to Agent School — lesson four.
+[friendly] Yesterday: AI reads tokens. Today: how many tokens it can hold at once.
+[explaining] Every model has a context window — its working memory. Your messages, its replies, any files… all must fit inside.
+[curious] Picture a desk. Everything on the desk, the AI can see. Fall off the desk… and it's gone.
+[building energy] Chat long enough and the window fills up. The oldest messages slide off the edge. [chuckles] That rule you set an hour ago? It might not be on the desk anymore.
+[matter-of-fact] Windows are huge today — hundreds of thousands of tokens on many models. But huge isn't infinite, and a crowded desk makes answers worse.
+[serious, slower] So for long work: restate what matters, or start a fresh chat with a short summary.
+[slow, memorable] Remember: if it's not in the context window, the AI doesn't know it.
+[teasing] Tomorrow… why AI lies with a straight face.
+[energetic, warm] This is Agent School. Lesson five drops tomorrow — [playful urgency] subscribe so you don't fall behind!
