@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FontStyle, clamp01, eio } from "./kit";
 import { Narration, Director, Shot } from "./factkit";
-import { K, Wr, DCard, DLine, DBar, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide } from "./lessonkit";
+import { K, Wr, DCard, DLine, DBar, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide, Recap } from "./lessonkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 const LESSON = 4, TITLE = "Your AI Forgets You";
@@ -47,7 +47,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
     const n = 14;
     return (
       <g>
-        <Wr f={f} at={F.yesterday} x={480} y={70} fs={30} t="yesterday: AI reads tokens" c={K.grey} dur={16} />
+        <Recap f={f} at={F.yesterday} until={F.today} y={70} fs={30} t="AI reads tokens" />
         <Wr f={f} at={F.today} x={480} y={160} fs={50} t="TODAY: HOW MANY CAN IT HOLD?" c={K.blue} dur={22} />
         <DCard f={f} at={F.hold - 10} x={90} y={240} w={780} h={150} fill={K.soft} stroke={K.blue} />
         {[...Array(n)].map((_, i) => <DCard key={i} f={f} at={F.hold + i * 2} x={115 + i * 53} y={275} w={42} h={80} r={8} fill={K.blue} stroke={K.blue} dur={5} />)}

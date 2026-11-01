@@ -215,12 +215,13 @@ export const cueFinder = (WORDS: [number, number, string][]) => (word: string, n
   throw new Error(`cue word not found: ${word} #${n}`);
 };
 /** Standard closing slide: "TOMORROW → LESSON n+1", the module progress dots, and the subscribe button. */
-export const EndSlide: React.FC<{ f: number; lesson: number; next: string; tomorrowAt: number; schoolAt: number; buttonAt: number; subscribeAt: number; total?: number; nextLabel?: string }> = ({ f, lesson, next, tomorrowAt, schoolAt, buttonAt, subscribeAt, total = 30, nextLabel }) => {
+export const EndSlide: React.FC<{ f: number; lesson: number; next: string; tomorrowAt: number; schoolAt: number; buttonAt: number; subscribeAt: number; total?: number; nextLabel?: string }> = ({ f, lesson, next, tomorrowAt, schoolAt: schoolCue, buttonAt, subscribeAt, total = 30, nextLabel }) => {
   const clicked = f >= subscribeAt + 16;
+  const schoolAt = Math.min(schoolCue, tomorrowAt + 48); // never leave the board half-empty while he says the next topic
   return (
     <g>
       <Wr f={f} at={tomorrowAt} x={480} y={90} fs={46} t={nextLabel ?? `TOMORROW → LESSON ${lesson + 1}`} c={K.blue} dur={16} />
-      <Wr f={f} at={tomorrowAt + 18} x={480} y={150} fs={26} t={next} c={K.grey} dur={26} />
+      <Wr f={f} at={tomorrowAt + 18} x={480} y={152} fs={Math.min(32, Math.floor(1500 / Math.max(1, next.length)))} t={next} c={K.grey} dur={26} />
       <Wr f={f} at={schoolAt} x={480} y={240} fs={28} t={`AGENT SCHOOL · MODULE 1 · ${total} LESSONS`} dur={18} />
       {[...Array(total)].map((_, i) => { const p = pop(f, schoolAt + 10 + i * 1.2, 8); if (p <= 0) return null; const cx = 120 + (i % 10) * 80, cy = 300 + Math.floor(i / 10) * 74; const done = i < lesson, nx = i === lesson;
         return (<g key={i} transform={`translate(${cx} ${cy}) scale(${p})`}><circle r={28} fill={done ? K.green : nx ? "#DCEBFF" : "#fff"} stroke={done ? K.green : nx ? K.blue : "#C9D3E6"} strokeWidth={4} opacity={nx ? 0.65 + 0.35 * Math.sin(f * 0.2) : 1} /><text y={9} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={24} fill={done ? "#fff" : nx ? K.blue : K.grey}>{i + 1}</text></g>); })}
@@ -229,6 +230,22 @@ export const EndSlide: React.FC<{ f: number; lesson: number; next: string; tomor
       </DCard>
     </g>
   );
+};
+/** Recap line ("yesterday: …"). While he is still on the recap (until `until`), it is a big centred card so the
+ *  board is never empty; once the new idea starts it sits as the small grey line at the top. Short recaps
+ *  (< 50 frames) just write the small line. */
+export const Recap: React.FC<{ f: number; at: number; until: number; t: string; y?: number; fs?: number }> = ({ f, at, until, t, y = 70, fs = 30 }) => {
+  const big = until - at >= 50 && f < until - 4;
+  if (big) {
+    const bfs = Math.min(56, Math.floor(680 / (0.6 * Math.max(1, t.length))));
+    return (
+      <DCard f={f} at={at} x={110} y={170} w={740} h={250} dur={12}>
+        <Wr f={f} at={at + 6} x={480} y={250} fs={34} t="YESTERDAY" c={K.grey} dur={10} />
+        <Wr f={f} at={at + 16} x={480} y={350} fs={bfs} t={t} dur={20} />
+      </DCard>
+    );
+  }
+  return <Wr f={f} at={until - at >= 50 ? -999 : at} x={480} y={y} fs={fs} t={`yesterday: ${t}`} c={K.grey} dur={20} />;
 };
 /** Simple code/terminal card the pen "writes" line by line (for technical lessons). */
 export const CodeCard: React.FC<{ f: number; at: number; x: number; y: number; w: number; lines: string[]; title?: string; fs?: number; per?: number }> = ({ f, at, x, y, w, lines, title = "agent.py", fs = 24, per = 10 }) => (

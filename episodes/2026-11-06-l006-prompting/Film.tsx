@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FontStyle } from "./kit";
 import { Narration, Director, Shot } from "./factkit";
-import { K, Wr, DCard, DLine, DBar, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide } from "./lessonkit";
+import { K, Wr, DCard, DLine, DBar, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide, Recap } from "./lessonkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 const LESSON = 6, TITLE = "Same AI, 10× Better Answers";
@@ -48,7 +48,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
   );
   if (f < F.write - 6) return ( // GIVE IT THE INFORMATION
     <g>
-      <Wr f={f} at={F.yesterday} x={480} y={70} fs={30} t="yesterday: AI makes things up" c={K.grey} dur={18} />
+      <Recap f={f} at={F.yesterday} until={F.missing} y={70} fs={30} t="AI makes things up" />
       <Wr f={f} at={F.missing - 4} x={480} y={115} fs={30} t="when information is missing" c={K.grey} dur={16} />
       <Wr f={f} at={F.today} x={480} y={220} fs={56} t="TODAY:" c={K.blue} dur={8} />
       <DCard f={f} at={F.give - 8} x={110} y={270} w={740} h={180} fill={K.soft} stroke={K.blue}>

@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FontStyle } from "./kit";
 import { Narration, Director, Shot } from "./factkit";
-import { K, Wr, DCard, DLine, DBar, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide } from "./lessonkit";
+import { K, Wr, DCard, DLine, DBar, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide, Recap } from "./lessonkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 const LESSON = 3, TITLE = "AI Can't See \"Strawberry\"";
@@ -39,7 +39,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
   );
   if (f < F.ai2 - 6) return ( // WHAT DOES THE MACHINE SEE?
     <g>
-      <Wr f={f} at={F.yesterday} x={480} y={70} fs={30} t="yesterday: machines learn from examples" c={K.grey} dur={24} />
+      <Recap f={f} at={F.yesterday} until={F.today} y={70} fs={30} t="machines learn from examples" />
       <Wr f={f} at={F.today} x={480} y={160} fs={52} t="TODAY: WHAT DOES IT SEE?" c={K.blue} dur={18} />
       <DCard f={f} at={F.examples2 - 4} x={60} y={220} w={370} h={250}>
         <Wr f={f} at={F.examples2 + 4} x={245} y={285} fs={30} t="you type:" c={K.grey} dur={8} />

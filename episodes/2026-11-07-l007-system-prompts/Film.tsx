@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FontStyle } from "./kit";
 import { Narration, Director, Shot } from "./factkit";
-import { K, Wr, DCard, DLine, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide } from "./lessonkit";
+import { K, Wr, DCard, DLine, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide, Recap } from "./lessonkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 const LESSON = 7, TITLE = "The Secret Message: System Prompts";
@@ -48,7 +48,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
   );
   if (f < F.every - 6) return ( // THE PROMPT YOU NEVER SEE
     <g>
-      <Wr f={f} at={F.yesterday} x={480} y={70} fs={30} t="yesterday: writing great prompts" c={K.grey} dur={18} />
+      <Recap f={f} at={F.yesterday} until={F.great} y={70} fs={30} t="writing great prompts" />
       <DCard f={f} at={F.great - 4} x={240} y={110} w={480} h={110} fill="#E9F8F0" stroke={K.green} dur={10}>
         <Wr f={f} at={F.great + 4} x={480} y={180} fs={40} t="your prompt" c={K.green} dur={10} />
       </DCard>

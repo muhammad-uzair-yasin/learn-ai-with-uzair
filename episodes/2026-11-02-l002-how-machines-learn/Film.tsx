@@ -10,7 +10,7 @@ import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 const LESSON = 2, TITLE = "Nobody Programmed ChatGPT's Answers";
 const W = cueFinder(WORDS);
 const F = {
-  nobody: W("nobody"), not1: W("not"), welcome: W("welcome"), yesterday: W("yesterday"), old: W("old"), rules1: W("rules"),
+  nobody: W("nobody"), not1: W("not"), welcome: W("welcome"), yesterday: W("yesterday"), today: W("today"), old: W("old"), rules1: W("rules"),
   ifw: W("if"), human: W("human"), machine: W("machine"), flips: W("flips"), examples1: W("examples"), finds: W("finds"),
   heres: W("heres"), hide: W("hide"), guesses: W("guesses"), wrong: W("wrong"), nudges: W("nudges"), again: W("again"), billions1: W("billions"),
   tweak: W("tweak"), parameters: W("parameters"), nobody2: W("nobody", 2), theyre: W("theyre"),
@@ -32,9 +32,20 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
       </DCard>
     </g>
   );
+  if (f < F.old - 4) return ( // RECAP: yesterday / today
+    <g>
+      <DCard f={f} at={F.yesterday} x={80} y={60} w={800} h={200} dur={12}>
+        <Wr f={f} at={F.yesterday + 6} x={480} y={125} fs={34} t="YESTERDAY" c={K.grey} dur={10} />
+        <Wr f={f} at={F.yesterday + 16} x={480} y={205} fs={50} t="AI predicts the next word" dur={22} />
+      </DCard>
+      <DCard f={f} at={F.today} x={80} y={310} w={800} h={230} fill={K.soft} stroke={K.blue} dur={12}>
+        <Wr f={f} at={F.today + 6} x={480} y={380} fs={40} t="TODAY" c={K.blue} dur={8} />
+        <Wr f={f} at={F.today + 16} x={480} y={470} fs={56} t="how did it LEARN that?" dur={22} />
+      </DCard>
+    </g>
+  );
   if (f < F.machine - 6) return ( // OLD SOFTWARE = RULES
     <g>
-      <Wr f={f} at={F.yesterday} x={480} y={70} fs={30} t="yesterday: AI predicts the next word" c={K.grey} dur={22} />
       <Wr f={f} at={F.old} x={480} y={150} fs={56} t="OLD SOFTWARE = RULES" dur={18} />
       <DCard f={f} at={F.ifw - 8} x={160} y={200} w={640} h={230} fill="#0F1726" stroke="#0F1726">
         <Wr f={f} at={F.ifw} x={200} y={270} fs={34} t="if  question == ..." c="#7EE787" a="start" dur={14} />

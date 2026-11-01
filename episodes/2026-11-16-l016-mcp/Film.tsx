@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FontStyle } from "./kit";
 import { Narration, Director, Shot } from "./factkit";
-import { K, Wr, DCard, DLine, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide } from "./lessonkit";
+import { K, Wr, DCard, DLine, DTick, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide, Recap } from "./lessonkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 const LESSON = 16, TITLE = "The USB-C of AI: What Is MCP?";
@@ -46,7 +46,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
     const L = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]];
     return (
       <g>
-        <Wr f={f} at={F.yesterday} x={480} y={70} fs={32} t="yesterday: tools let AI act" c={K.grey} dur={16} />
+        <Recap f={f} at={F.yesterday} until={F.problem} y={70} fs={32} t="tools let AI act" />
         <Wr f={f} at={F.problem - 6} x={480} y={135} fs={48} t="TODAY'S PROBLEM" c={K.red} dur={12} />
         {["App A", "App B", "App C"].map((t, i) => (
           <DCard key={i} f={f} at={F.every + i * 4} x={60} y={180 + i * 115} w={200} h={76} r={16} fill={K.soft} stroke={K.blue} dur={8}>

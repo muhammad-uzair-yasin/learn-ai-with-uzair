@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FontStyle, clamp01 } from "./kit";
 import { Narration, Director, Shot } from "./factkit";
-import { K, Wr, DCard, DLine, DBar, DTick, Pen, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide } from "./lessonkit";
+import { K, Wr, DCard, DLine, DBar, DTick, Pen, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide, Recap } from "./lessonkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 const LESSON = 10, TITLE = "Sentences Become Coordinates";
@@ -50,7 +50,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
   );
   if (f < F.embedding - 6) return ( // RECAP: RAG FINDS THE PAGE
     <g>
-      <Wr f={f} at={F.yesterday} x={480} y={80} fs={34} t="yesterday: RAG finds the right page" c={K.grey} dur={22} />
+      <Recap f={f} at={F.yesterday} until={F.rag} y={80} fs={34} t="RAG finds the right page" />
       {[180, 400, 620].map((x, i) => (
         <DCard key={i} f={f} at={F.rag + 4 + i * 6} x={x} y={130} w={160} h={210} fill={i === 1 ? K.soft : "#fff"} stroke={i === 1 ? K.blue : "#C9D6EA"}>
           {[0, 1, 2, 3].map((k) => <DBar key={k} f={f} at={F.rag + 14 + i * 6 + k * 2} x={x + 25} y={175 + k * 38} w={110 - (k % 2) * 30} h={12} c={i === 1 ? K.blue : "#C9D3E6"} dur={8} />)}

@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FontStyle } from "./kit";
 import { Narration, Director, Shot } from "./factkit";
-import { K, Wr, DCard, DLine, DTick, CodeCard, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide } from "./lessonkit";
+import { K, Wr, DCard, DLine, DTick, CodeCard, resetClips, Classroom, TitleBar, CaptionBar, perform, CAMS, LessonThumbLayout, cueFinder, EndSlide, Recap } from "./lessonkit";
 import { WORDS, CHUNKS, TOTAL, ENV } from "./words";
 
 const LESSON = 14, TITLE = "Every Agent Runs This Loop";
@@ -51,7 +51,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
   );
   if (f < F.step - 6) return ( // RECAP
     <g>
-      <Wr f={f} at={F.yesterday} x={480} y={90} fs={40} t="yesterday: an agent =" c={K.grey} dur={14} />
+      <Recap f={f} at={F.yesterday} until={F.today} y={90} fs={40} t="an agent =" />
       {[["MODEL", F.model], ["TOOLS", F.tools], ["GOAL", F.goal], ["LOOP", F.loop2]].map(([t, at], i) => (
         <DCard key={i} f={f} at={(at as number) - 6} x={60 + i * 215} y={140} w={195} h={90} r={45} fill={i === 3 ? K.amber : K.soft} stroke={i === 3 ? K.amber : K.blue} dur={8}>
           <Wr f={f} at={(at as number) + 2} x={157 + i * 215} y={199} fs={34} t={t as string} c={i === 3 ? K.ink : K.blue} dur={6} />
