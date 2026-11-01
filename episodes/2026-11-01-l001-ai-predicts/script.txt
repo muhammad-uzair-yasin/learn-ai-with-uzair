@@ -1,0 +1,8 @@
+AI doesn't think... it predicts. Welcome to Agent School... lesson one.
+When you ask ChatGPT a question, it's not understanding you. It's doing exactly one thing... predicting the next word. Then the next. Then the next. Thousands of times, for every single answer.
+Here's the easiest way to see it. Your phone's keyboard suggests the next word, right? Trained on your texting. Now take that same idea... and train it on basically the whole internet. Books, code, websites... trillions of words. That's a large language model. Same trick... unimaginable scale.
+And that's why it feels so smart. It has seen almost every question humans have ever asked... and learned the patterns hiding in our answers. Ask it anything —  and it just continues the pattern.
+But here's the catch... and this one really matters. A prediction machine doesn't know what's true. It only knows what's... likely. "Paris" usually follows "the capital of France is" — so it says Paris. Not because it knows... because it's probable. That's why AI can be brilliant... and confidently wrong, in the same sentence. Don't worry — we'll fix that later in this course.
+So remember one line. AI is not a mind... it's the world's most powerful autocomplete.
+Tomorrow... how machines learn all of this, without a single programmer writing the answers.
+This is Agent School. Lesson two drops tomorrow... subscribe so you don't fall behind.
