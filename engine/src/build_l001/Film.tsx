@@ -443,3 +443,41 @@ export const LessonFilm: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+// ================= THUMBNAIL (1080x1920 still) =================
+export const LessonThumb: React.FC = () => (
+  <AbsoluteFill style={{ background: K.wall }}>
+    <FontStyle />
+    <svg width={VW} height={VH} viewBox={`0 0 ${VW} ${VH}`}>
+      <rect width={VW} height={VH} fill={K.wall} />
+      <rect y={1300} width={VW} height={620} fill={K.floor} />
+      {[...Array(10)].map((_, i) => <path key={i} d={`M${i * 120} 1300 L${i * 120 - 80} 1920`} stroke={K.floor2} strokeWidth={3} />)}
+      {/* sunburst */}
+      {[...Array(16)].map((_, i) => { const a1 = (i / 16) * Math.PI * 2, a2 = a1 + Math.PI / 22; return <path key={i} d={`M540 700 L${540 + Math.cos(a1) * 1600} ${700 + Math.sin(a1) * 1600} L${540 + Math.cos(a2) * 1600} ${700 + Math.sin(a2) * 1600} Z`} fill="#FFFFFF" opacity={0.35} />; })}
+      {/* tag */}
+      <g transform="translate(540 110)">
+        <rect x={-300} y={-50} width={600} height={92} rx={46} fill={K.blue} stroke={K.ink} strokeWidth={6} />
+        <text y={20} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={44} fill="#fff" letterSpacing={3}>FREE AI COURSE · L1</text>
+      </g>
+      {/* screen */}
+      <rect x={34} y={210} width={1012} height={720} rx={30} fill="#1C2230" stroke={K.ink} strokeWidth={8} />
+      <rect x={60} y={236} width={960} height={668} rx={14} fill="#fff" />
+      <text x={540} y={420} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={150} fill={K.ink}>AI DOESN'T</text>
+      <text x={540} y={600} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={190} fill={K.ink}>THINK</text>
+      <path d="M250 540 L830 512" stroke={K.red} strokeWidth={30} strokeLinecap="round" />
+      <text x={540} y={810} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={136} fill={K.blue}>IT PREDICTS</text>
+      <g transform="translate(985 880) rotate(28) scale(0.8)">
+        <path d="M-14 -46 L0 0 L14 -46 Z" fill="#F3D9B1" stroke={K.ink} strokeWidth={5} strokeLinejoin="round" />
+        <rect x={-18} y={-210} width={36} height={170} rx={10} fill={K.blue} stroke={K.ink} strokeWidth={5} />
+      </g>
+      {/* teacher */}
+      <g transform="translate(-40 1010) scale(1.72)"><Teacher2D pose={{ point: 0.95, talk: 0.9, brow: 1.1, smile: 0.6, leftHand: "openPalm", lookX: 0.3 }} /></g>
+      {/* hook bubble */}
+      <g transform="translate(790 1230) rotate(-6)">
+        <rect x={-250} y={-80} width={500} height={160} rx={36} fill={K.amber} stroke={K.ink} strokeWidth={7} />
+        <text y={-6} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={62} fill={K.ink}>WAIT… WHAT?!</text>
+        <text y={58} textAnchor="middle" fontFamily={FONT} fontWeight={800} fontSize={40} fill={K.ink}>how AI really works</text>
+      </g>
+    </svg>
+  </AbsoluteFill>
+);

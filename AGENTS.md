@@ -32,3 +32,7 @@ One video per day. End line of every video: *"Lesson N+1 drops tomorrow... subsc
 - Don't change the channel's purpose or the rules without Uzair.
 - Don't commit rendered MP4s (they live on YouTube) or any API keys/tokens.
 - Don't invent facts, prices or links — verify or cut.
+
+## LOCKED lesson format (Nov 1 2026)
+- Lesson 1 approved: see `reference/L001-ai-predicts/` (final video + thumbnail + frames) and `docs/lesson-format.md`.
+- Build every new lesson from `episodes/_template-lesson/` using `engine/src/lessonkit.tsx` + `engine/src/Teacher2D.tsx`.
