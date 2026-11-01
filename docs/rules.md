@@ -43,3 +43,4 @@ Treat them as requirements. If a rule seems to conflict with a skill or template
 
 ## On-screen title (Uzair, Nov 1 2026)
 - Every video keeps its title visible for the WHOLE video (top-left or top-right).
+- Learn AI board/screen: a pen writes and draws everything on the screen (Uzair, Nov 1).
