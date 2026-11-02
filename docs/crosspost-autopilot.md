@@ -30,6 +30,9 @@ If a media_id is rejected, retry with `media_url` = postsiva_media_url when the 
       Every caption except TikTok carries the YouTube lesson link AND the channel link. No facts beyond the YouTube description.
    c. Set `crossposted: true` only if at least 5 of 7 succeeded; store the returned permalinks in `crosspost_links`.
       Failed platforms: retry once; if still failing, list them in `crosspost_links.failed`.
-3. Append a line per lesson to `docs/publish-log.md` (under the L2–L8 / L9–L30 tables), commit, push.
+3. NO DOUBLE POSTS: right after each lesson is posted, set `crossposted: true`, add its line to `docs/publish-log.md`,
+   then commit AND push immediately (before touching the next lesson). If the push fails, retry once (`git pull --rebase`
+   then push); if it still fails, STOP — post nothing more this run and report it, so a later run can't post it again.
+   Never post a lesson whose row is already `crossposted: true`, or that already has a cross-post line in publish-log.md.
 4. If every row is `crossposted: true`, say "Month 1 cross-posting complete" in the final message.
 5. Final message (Uzair reads it on his phone): which lesson(s) were cross-posted, the links, any failures. If nothing went public since the last run, reply only "Nothing new to cross-post." (keep it to that one line).
