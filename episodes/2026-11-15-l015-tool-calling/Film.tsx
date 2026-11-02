@@ -38,7 +38,7 @@ const ScreenContent: React.FC<{ f: number }> = ({ f: f0 }) => {
   );
   if (f < F.model - 6) return ( // RECAP
     <g>
-      <Recap f={f} at={F.yesterday} until={F.act2} y={90} fs={36} t="the loop" />
+      <Recap f={f} at={F.yesterday} until={F.think} y={90} fs={36} t="the loop" />
       {[["THINK", F.think, K.blue], ["ACT", F.act, K.green], ["OBSERVE", F.observe, K.violet]].map(([t, at, c], i) => (
         <DCard key={i} f={f} at={(at as number) - 4} x={105 + i * 270} y={150} w={210} h={90} r={45} fill={c as string} stroke={c as string} dur={6}>
           <Wr f={f} at={(at as number) + 2} x={210 + i * 270} y={209} fs={i === 2 ? 32 : 38} t={t as string} c="#fff" dur={6} />
