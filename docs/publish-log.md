@@ -34,6 +34,7 @@
 | L2 Nobody Programmed ChatGPT's Answers | Mon Nov 2, 21:00 | https://youtu.be/cfrKpr2Sdm8 | ❌ add by hand (YouTube 409 SERVICE_UNAVAILABLE) |
 - L2 was published early by Uzair (live Nov 2, 09:00 UTC). Cross-posted Nov 2: Instagram https://www.instagram.com/reel/DfPBzdqBkGC/ · Facebook https://www.facebook.com/reel/122174934488963235 · TikTok (published) · LinkedIn page (published) · Threads (post 18114300359128655) · Bluesky (encoding) · Mastodon https://mastodon.social/@uzairyasin/117546230385961071
 | L3 AI Can't See "Strawberry" | Tue Nov 3, 21:00 | https://youtu.be/96_cyYUjp5c | ✅ |
+- L3 went live Nov 2 (~21:00 UTC). Cross-posted Nov 2 (autopilot): Instagram https://www.instagram.com/reel/DfQb-B4TV9B/ · Facebook https://www.facebook.com/reel/122175038978963235 · TikTok (published) · LinkedIn page (published) · Threads (post 17966817117233524) · Bluesky (encoding) · Mastodon https://mastodon.social/@uzairyasin/117549330525915690
 | L4 Your AI Forgets You | Wed Nov 4, 21:00 | https://youtu.be/7KPs4xvSTmo | ✅ |
 | L5 Why AI Lies With a Straight Face | Thu Nov 5, 21:00 | https://youtu.be/gOe7gYd4OaM | ✅ |
 | L6 Same AI, 10× Better Answers | Fri Nov 6, 21:00 | https://youtu.be/JBWBmvwXoVs | ✅ |
