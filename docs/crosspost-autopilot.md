@@ -7,8 +7,8 @@ A daily scheduled task (03:39 PKT, after the lesson goes live at 02:00 PKT weekd
 `docs/crosspost-m1.json` — one row per lesson (2–30): `publish_utc`, `youtube_id` / `youtube_url`, `postsiva_media_id`
 (the same video already uploaded to Postsiva when the lesson was scheduled — reuse it, do NOT re-upload),
 `postsiva_media_url` (fallback, only L2–L8 have it), `crossposted`, `crosspost_links`.
-If a media_id is ever rejected, re-upload `episodes/<date>-lNNN-*/render.mp4`… but renders are not in git, so instead
-download nothing — report it and skip that platform.
+If a media_id is rejected, retry with `media_url` = postsiva_media_url when the row has one; otherwise report it
+(renders are not in git, so there is nothing to re-upload) and skip that platform.
 
 ## Steps
 1. Repo `/home/claude/learn-ai-with-uzair` (github muhammad-uzair-yasin/learn-ai-with-uzair); attach with `add_repo` (access push) and clone if missing. `git pull`.
