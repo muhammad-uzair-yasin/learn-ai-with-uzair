@@ -36,6 +36,7 @@
 | L3 AI Can't See "Strawberry" | Tue Nov 3, 21:00 | https://youtu.be/96_cyYUjp5c | ✅ |
 - L3 went live Nov 2 (~21:00 UTC). Cross-posted Nov 2 (autopilot): Instagram https://www.instagram.com/reel/DfQb-B4TV9B/ · Facebook https://www.facebook.com/reel/122175038978963235 · TikTok (published) · LinkedIn page (published) · Threads (post 17966817117233524) · Bluesky (encoding) · Mastodon https://mastodon.social/@uzairyasin/117549330525915690
 | L4 Your AI Forgets You | Wed Nov 4, 21:00 | https://youtu.be/7KPs4xvSTmo | ✅ |
+- L4 went live Nov 3 (~21:00 UTC). Cross-posted Nov 3 (autopilot): Instagram https://www.instagram.com/reel/DfSzYj8BVga/ (2nd try; 1st timed out) · Facebook https://www.facebook.com/reel/122175199766963235 · TikTok (published) · LinkedIn page https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7523489715841396737 · Threads (post 18026923991868594) · Bluesky (encoding) · Mastodon https://mastodon.social/@uzairyasin/117554529096467020
 | L5 Why AI Lies With a Straight Face | Thu Nov 5, 21:00 | https://youtu.be/gOe7gYd4OaM | ✅ |
 | L6 Same AI, 10× Better Answers | Fri Nov 6, 21:00 | https://youtu.be/JBWBmvwXoVs | ✅ |
 | L7 System Prompts | Sat Nov 7, 17:00 | https://youtu.be/b1J6J0O86Ys | ✅ |
