@@ -55,8 +55,16 @@
     "youtube_url": "https://youtu.be/gOe7gYd4OaM",
     "postsiva_media_id": "e2ce0a1a-8bbd-40eb-a3e2-70800858b2a8",
     "postsiva_media_url": "https://storage.postsiva.com/uploads/upload_6ae79c4c5cbea8.95766875_898c00ab5a485516.mp4",
-    "crossposted": false,
-    "crosspost_links": {},
+    "crossposted": true,
+    "crosspost_links": {
+      "instagram": "https://www.instagram.com/reel/DfVljT4IJOj/",
+      "facebook": "https://www.facebook.com/reel/122175321500963235",
+      "tiktok": "published",
+      "linkedin": "https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7523881714167853056",
+      "threads": "post 18116062568135809",
+      "bluesky": "encoding (job dblrhp5rc03c73ebecrg)",
+      "mastodon": "https://mastodon.social/@uzairyasin/117560656856956290"
+    },
     "planned_publish_utc": "2026-11-05T21:00:00Z"
   },
   {
