@@ -24,6 +24,13 @@ Mastodon `116959168893128714` · YouTube `UCZYmYaoskkNkoOE7LyJOKuw`
 - Post at most **1 lesson per run**, and at most **3 lessons per UTC day** (count today's "cross-posted" lines in docs/publish-log.md).
 - Always the **lowest-numbered** public, not-yet-crossposted lesson first.
 
+## Facebook backfill (Uzair reconnected Facebook on Nov 17)
+L8–L12 were cross-posted while Facebook was disconnected (their row has `crosspost_links.failed` mentioning facebook).
+Each run, in addition to its normal lesson (and even when there is no new lesson), post **one** of these to Facebook only —
+lowest lesson first — with FACEBOOK_POST_REEL `{account_id, video_id: postsiva_media_id, text}` (caption built from that
+lesson's YouTube description, same format as Instagram). On success put the permalink in `crosspost_links.facebook`,
+remove facebook from `failed`, add a log line, commit + push. Mention it in the final message.
+
 ## Steps
 1. Repo `/home/claude/learn-ai-with-uzair` (github muhammad-uzair-yasin/learn-ai-with-uzair); attach with `add_repo` (access push) and clone if missing. `git pull`.
 2. For every row with `crossposted: false`, check if the video is PUBLIC right now:
