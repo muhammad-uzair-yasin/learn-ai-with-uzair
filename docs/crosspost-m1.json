@@ -281,8 +281,16 @@
     "youtube_url": "https://youtu.be/culk0gwD9Dw",
     "postsiva_media_id": "542d9a0c-83f8-40b9-a6cc-05434c86c63e",
     "postsiva_media_url": "https://media.postsiva.com/87b0dd41-fca3-46a1-a5b7-206b65b75f59--learnaiwithuzair/library/542d9a0c-83f8-40b9-a6cc-05434c86c63e.mp4",
-    "crossposted": false,
-    "crosspost_links": {},
+    "crossposted": true,
+    "crosspost_links": {
+      "facebook": "https://www.facebook.com/reel/1612509376824197/",
+      "tiktok": "https://www.tiktok.com/@ai.with.uzair/video/7711412751997914389",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7530676600787525632/",
+      "threads": "https://www.threads.com/@learn_ai_with_uzair/post/DgF3bwCgAJK",
+      "bluesky": "https://bsky.app/profile/uzair01.bsky.social/post/3n2ym62qjpo27",
+      "mastodon": "https://mastodon.social/@uzairyasin/117666823366150844",
+      "failed": "instagram: pending — MCP connection dropped mid-call; reel not yet visible at 17:01 UTC, not retried to avoid a double post"
+    },
     "planned_publish_utc": "2026-11-17T21:00:00Z",
     "media_reuploaded": true
   },
