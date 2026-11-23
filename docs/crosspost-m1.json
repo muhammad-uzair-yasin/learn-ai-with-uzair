@@ -262,8 +262,16 @@
     "youtube_url": "https://youtu.be/aGN24Wp9HAs",
     "postsiva_media_id": "5d072e9f-19bc-4250-bd9f-d8888d18608c",
     "postsiva_media_url": "https://media.postsiva.com/87b0dd41-fca3-46a1-a5b7-206b65b75f59--learnaiwithuzair/library/5d072e9f-19bc-4250-bd9f-d8888d18608c.mp4",
-    "crossposted": false,
-    "crosspost_links": {},
+    "crossposted": true,
+    "crosspost_links": {
+      "instagram": "https://www.instagram.com/reel/DgFpxQ2BIwz/",
+      "facebook": "https://www.facebook.com/reel/2256353185301132/",
+      "tiktok": "https://www.tiktok.com/@ai.with.uzair/video/7711381767227198741",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7530646385856163840/",
+      "threads": "https://www.threads.com/@learn_ai_with_uzair/post/DgFpr0ao5Rv",
+      "bluesky": "https://bsky.app/profile/uzair01.bsky.social/post/3n2yfguzxeg2f",
+      "mastodon": "https://mastodon.social/@uzairyasin/117666351441811486"
+    },
     "planned_publish_utc": "2026-11-16T21:00:00Z",
     "media_reuploaded": true
   },
